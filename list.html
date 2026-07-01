@@ -211,33 +211,20 @@
     </main>
 
     <script>
-        // CONFIGURAÇÃO AUTOMÁTICA EXTRAÍDA DA URL DO GITHUB PAGES
-        // Exemplo: se sua URL for https://seu-usuario.github.io/seu-repositorio/
-        const hostnameParts = window.location.hostname.split('.');
-        const username = hostnameParts[0]; 
-        const pathParts = window.location.pathname.split('/').filter(Boolean);
-        const repoName = pathParts[0] || ''; 
+        // CONFIGURAÇÃO AJUSTADA
+        const username = "danviana-has";
+        const repoName = "GM-Corporation-Domain"; 
 
         const container = document.getElementById('projectList');
 
         async function fetchGitHubProjects() {
-            // Se você testar localmente (localhost), a URL da API do GitHub não vai se auto-configurar direito.
-            // Para testar localmente no Pages, você pode descomentar e preencher as linhas abaixo manualmente:
-            // const username = "SEU_USUARIO_AQUI";
-            // const repoName = "SEU_REPOSITORIO_AQUI";
-
-            if (!username || !repoName || username === "localhost" || username === "127") {
-                container.innerHTML = '<div class="loading-status" style="color: #e3b341;">Para funcionar, publique este repositório no GitHub Pages ou configure as variáveis no código.</div>';
-                return;
-            }
-
             const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/list`;
 
             try {
                 const response = await fetch(apiUrl);
                 
                 if (response.status === 404) {
-                    container.innerHTML = '<div class="loading-status">A pasta "list" ainda não foi criada no seu repositório.</div>';
+                    container.innerHTML = '<div class="loading-status">A pasta "list" ainda não foi criada ou está vazia no seu repositório.</div>';
                     return;
                 }
 
@@ -265,7 +252,7 @@
                             <span class="folder-icon"></span>
                             <div>
                                 <span class="project-name">${folder.name}</span>
-                                <span class="project-meta">/index.html detectado</span>
+                                <span class="project-meta">/index.html auto-detectado</span>
                             </div>
                         </div>
                         <a href="${projectUrl}" class="btn-open" target="_blank">
