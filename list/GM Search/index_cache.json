@@ -2,10 +2,161 @@
   "termo_atual": "Automação",
   "paginas": [
     {
-      "titulo": "Limite temporário atingido",
-      "url": "https://duckduckgo.com",
-      "conteudo": "O motor recebeu muitas requisições seguidas. Aguarde um instante para rodar a busca novamente."
+      "titulo": "Automação – Wikipédia, a enciclopédia livre",
+      "url": "https://pt.wikipedia.org/wiki/Automação",
+      "conteudo": "October 19, 2025 - Automação (do latim Automatus, que significa mover-se por si só) é um sistema automático pelo qual os mecanismos verificam seu próprio funcionamento, efetuando medições e introduzindo correções, sem a necessidade da interferência do homem. Em seu uso moderno, a automação pode ser ..."
+    },
+    {
+      "titulo": "Automation",
+      "url": "https://en.wikipedia.org/wiki/Automation",
+      "conteudo": "Automation describes a wide range of technologies that reduce human intervention in processes, mainly by predetermining decision criteria, subprocess relationships, and related actions, as well as embodying those predeterminations in machines. Automation has been achieved by various means including mechanical, hydraulic, pneumatic, electrical, electronic devices, and computers, usually in combination. Complicated systems, such as modern factories, airplanes, and ships typically use combinations of all of these techniques. The benefits of automation includes labor savings, reducing waste, savings in electricity costs, savings in material costs, and improvements to quality, accuracy, and precision.Automation includes the use of various equipment and control systems such as machinery, processes in factories, boilers, and heat-treating ovens, switching on telephone networks, steering, stabilization of ships, aircraft and other applications and vehicles with reduced human intervention. Examples range from a household thermostat controlling a boiler to a large industrial control system with tens of thousands of input measurements and output control signals.In the simplest type of an automatic control loop, a controller compares a measured value of a process with a desired set value and processes the resulting error signal to change some input to the process, in such a way that the process stays at its set point despite disturbances. This closed-loop control is an application of negative feedback to a system. The mathematical basis of control theory began in the 18th century and advanced rapidly in the 20th. The term automation, inspired by the earlier word automatic (coming from automaton), was not widely used before 1947, when Ford established an automation department. It was during this time that the industry was rapidly adopting feedback controllers, Technological advancements introduced in the 1930s revolutionized various industries significantly.The World Bank's World Development Report of 2019 shows evidence that the new industries and jobs in the technology sector outweigh the economic effects of workers being displaced by automation. Job losses and downward mobility blamed on automation have been cited as one of many factors in the resurgence of nationalist, protectionist and populist politics in the US, UK and France, among other countries since the 2010s."
+    },
+    {
+      "titulo": "O que é automação? - IBM",
+      "url": "https://www.ibm.com/br-pt/think/topics/automation",
+      "conteudo": "O que é automação? Automação é a aplicação de tecnologia, programas, robótica ou processos para alcançar resultados com o mínimo de intervenção humana."
+    },
+    {
+      "titulo": "Automação - O que é, vantagens, conceito e definição",
+      "url": "https://conceito.de/automacao",
+      "conteudo": "Saiba o que é automação, como ela substitui a ação humana em vários processos e quais são seus benefícios. Conheça também os tipos de automação, como de processos, industrial e residencial, e suas aplicações na Indústria 4.0."
+    },
+    {
+      "titulo": "Automação: o que é, como funciona e exemplos para empresas",
+      "url": "https://mosten.com/o-que-e-automacao/",
+      "conteudo": "Jul 28, 2025 · Descubra como a automação pode reduzir erros, economizar tempo e integrar processos. Veja tipos, benefícios e exemplos para empresas de todos os portes!"
+    },
+    {
+      "titulo": "O que é automação inteligente? - IBM",
+      "url": "https://www.ibm.com/br-pt/think/topics/intelligent-automation",
+      "conteudo": "Automação inteligente (IA), às vezes chamada de automação cognitiva, é o uso de tecnologias de automação como inteligência artificial (IA), gerenciamento de processos de negócios (BPM) e automação de processos robóticos (RPA) para otimizar e escalar a tomada de decisões em toda a organização."
+    },
+    {
+      "titulo": "Automação: O Que é, Benefícios, Pilares, Como Adotar 2026",
+      "url": "https://genyo.com.br/automacao/",
+      "conteudo": "Saiba o que é automação, como ela pode otimizar operações, reduzir custos e aumentar a produtividade nas empresas. Conheça os principais pilares e áreas de aplicação da automação, desde a indústria 4.0 até os serviços financeiros."
+    },
+    {
+      "titulo": "Automação de processos: tipos, exemplos e passo a passo",
+      "url": "https://www.nuvemshop.com.br/blog/automacao-de-processos/",
+      "conteudo": "Mar 24, 2026 · Automação de processos é o uso de tecnologias para transformar tarefas manuais em automáticas. Entenda as vantagens e aprenda como automatizar seu negócio."
+    },
+    {
+      "titulo": "Tipos de automação industrial: quais são e exemplos",
+      "url": "https://www.universal-robots.com/br/blog/tipos-de-automacao-industrial-descubra-quais-sao-e-confira-exemplos/",
+      "conteudo": "A automação industrial é o uso de sistemas de controle, normalmente computadores ou robôs, para lidar com processos da manufatura e máquinas, assim liberando os trabalhadores humanos para outras tarefas mais valiosas na linha de produção."
+    },
+    {
+      "titulo": "AUTOMAÇÃO definition | Cambridge Dictionary",
+      "url": "https://dictionary.cambridge.org/us/dictionary/portuguese-english/automacao",
+      "conteudo": "2 weeks ago - AUTOMAÇÃO - translate into English with the Portuguese-English Dictionary - Cambridge Dictionary"
+    },
+    {
+      "titulo": "O que é automação? : r/automation",
+      "url": "https://www.reddit.com/r/automation/comments/1kgsv13/whats_automation/?tl=pt-br",
+      "conteudo": "May 7, 2025 - Bom, automação hoje em dia significa automatizar tarefas rotineiras usando agentes de IA, scripts em Python, conexões com terceiros, com o objetivo de realizar tarefas repetitivas em menos tempo."
+    },
+    {
+      "titulo": "Automação: o que é e como aplicar",
+      "url": "https://www.iugu.com/blog/o-que-e-automacao",
+      "conteudo": "January 27, 2026 - Ou seja, a técnica de automação faz parte da gestão de processos empresariais e consiste, basicamente, no uso de tecnologia e na integração de sistemas e dados para aprimorar o fluxo e o controle do trabalho e para se dedicar a atividades que realmente são importantes, como estratégias e inovações de negócio."
+    },
+    {
+      "titulo": "Técnico em Automação at Unilever",
+      "url": "https://careers.unilever.com/en/job/aguai/tecnico-em-automacao/34155/93457213264",
+      "conteudo": "April 1, 2026 - Principais Responsabilidades: Suporte Técnico em Automação, Controle e Instrumentação (Diagnóstico e Estabilidade) • Realizar troubleshooting técnico em sensores, atuadores, instrumentos, encoders, fotocélulas, chaves de presença, transmissores, sistemas de visão e demais dispositivos de campo que impactam estabilidade e performance."
+    },
+    {
+      "titulo": "Empresa de Automação de Sistemas : r/brdev",
+      "url": "https://www.reddit.com/r/brdev/comments/1stfciu/empresa_de_automação_de_sistemas/",
+      "conteudo": "We cannot provide a description for this page right now"
+    },
+    {
+      "titulo": "Automation of Simples Nacional DAS",
+      "url": "https://grokipedia.com/page/Automation_of_Simples_Nacional_DAS",
+      "conteudo": "Automation of Simples Nacional DAS refers to the use of specialized third-party fiscal software to streamline tax compliance under Brazil's Simples Nacional simplified tax regime for microenterprises (ME) and small businesses (EPP). These tools auto…"
     }
   ],
-  "imagens": []
+  "imagens": [
+    {
+      "url_imagem": "https://b2678692.smushcdn.com/2678692/wp-content/uploads/2023/03/Tudo-sobre-automacao-industrial-o-que-e-objetivos-e-vantagens.jpg?lossy=0&strip=1&webp=1",
+      "url_origem": "https://www.produttivo.com.br/blog/automacao-industrial/",
+      "descricao": "Automação industrial: o que é, objetivos e vantagens"
+    },
+    {
+      "url_imagem": "https://www.ramtech.ind.br/wp-content/uploads/2022/09/blog03.jpg",
+      "url_origem": "https://www.ramtech.ind.br/como-o-mercado-esta-reagindo-aos-processos-da-automacao-industrial/",
+      "descricao": "Como o mercado está reagindo aos processos da automação industrial - Ramtech - Fábrica de painéis"
+    },
+    {
+      "url_imagem": "https://blog.coontrol.com.br/wp-content/uploads/2024/06/sustentabilidade-ambiental-automacao-industrial.jpg",
+      "url_origem": "https://blog.coontrol.com.br/automacao-industrial/",
+      "descricao": "Automação industrial: como usar a favor da eficiência?"
+    },
+    {
+      "url_imagem": "https://arvsystems.com.br/blog/wp-content/uploads/2023/04/foto-da-linha-de-producao-de-automoveis-solda-corpo-do-carro-moderna-fabrica-de-montagem-de-automoveis-industria-automobilistica-scaled.jpg",
+      "url_origem": "https://www.arvsystems.com.br/blog/o-que-automacao-industrial-faz-saiba-tudo-neste-guia-pratico/",
+      "descricao": "O que automação industrial faz: saiba tudo neste guia prático"
+    },
+    {
+      "url_imagem": "https://sysmiddle.b-cdn.net/wp-content/uploads/2024/10/image3-8.png",
+      "url_origem": "https://sysmiddle.com.br/automacao-de-processos-industriais-guia-completo-e-vantagens/",
+      "descricao": "Automação de processos industriais: o que é, como implementar"
+    },
+    {
+      "url_imagem": "https://zetaluz.com.br/wp-content/uploads/2023/05/automobile-production-line-welding-car-body-mode-2023-01-03-22-23-27-utc.png",
+      "url_origem": "https://zetaluz.com.br/projeto/automacao-industrial/",
+      "descricao": "Automação Industrial | Zetaluz"
+    },
+    {
+      "url_imagem": "https://tuenkers.com.br/wp-content/uploads/2024/07/automacao-industrial-confira-os-tipos-de-automacao-existentes-01.jpg",
+      "url_origem": "https://tuenkers.com.br/automacao-industrial-3/",
+      "descricao": "Automação industrial: funcionamento e principais aplicações"
+    },
+    {
+      "url_imagem": "https://www.mundocuriosidade.com.br/wp-content/uploads/2024/08/IA-em-processos-industriais-1024x585.jpg",
+      "url_origem": "https://www.mundocuriosidade.com.br/tecnologia-e-automacao-industrial/",
+      "descricao": "Automação Industrial: 10 inovações tecnológicas importantes - Mundo Curiosidade"
+    },
+    {
+      "url_imagem": "https://www.multiversoautomacao.com.br/img/blog/capa/full-bcf0eacbf2d78d33e48c85d977b3b3e6.jpg",
+      "url_origem": "https://www.multiversoautomacao.com.br/blog/eficiencia-em-automacao-industrial-conheca-as-solucoes-que-impulsionam-resultados",
+      "descricao": "Multiverso Automação"
+    },
+    {
+      "url_imagem": "https://media.licdn.com/dms/image/v2/D4D12AQGFLhhxjLiCsw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1681232836528?e=2147483647&v=beta&t=ilPbrqIvWqCEsmmTaLLwOVgKQpNwZ8G3mJDBiMswQfY",
+      "url_origem": "https://www.linkedin.com/pulse/quais-são-principais-vantagens-da-automação-industrial-optimuseng",
+      "descricao": "Quais são as principais vantagens da automação industrial"
+    },
+    {
+      "url_imagem": "https://www.fm2s.com.br/storage/blog/images/automacao-industrial-o-que-e-e-quais-sao-os-beneficios.webp",
+      "url_origem": "https://www.fm2s.com.br/blog/automacao-industrial-o-que-e-e-quais-sao-os-beneficios",
+      "descricao": "Automação industrial: o que é e quais são os beneficíos? - FM2S"
+    },
+    {
+      "url_imagem": "https://www.pontorh.com.br/y/8585/automacao-industrial-e1659015527547-720.jpg",
+      "url_origem": "https://www.pontorh.com.br/automacao-industrial-que-faz-como-e-curso/",
+      "descricao": "Automação industrial: o que faz? Como é o curso? - Ponto RH"
+    },
+    {
+      "url_imagem": "https://www.tegup.com/wp-content/uploads/2025/10/componentes-automacao-industrial.jpg",
+      "url_origem": "https://www.tegup.com/uncategorized/automacao-industrial-e-logistica-conectada-como-startups-podem-impulsionar-seu-projeto/",
+      "descricao": "Automação Industrial e Logística Conectada"
+    },
+    {
+      "url_imagem": "https://blog.kalatec.com.br/wp-content/uploads/2019/05/image1-2.jpg",
+      "url_origem": "https://blog.kalatec.com.br/quais-sao-os-principais-tipos-de-automacao-industrial/",
+      "descricao": "Quais são os principais tipos de automação industrial"
+    },
+    {
+      "url_imagem": "https://ciriusquality.com.br/storage/2024/02/Automacao-Industrial.jpg",
+      "url_origem": "https://ciriusquality.com.br/automacao-industrial/",
+      "descricao": "Automação Industrial: O Pilar Da Quarta Revolução Industrial - Cirius Quality"
+    },
+    {
+      "url_imagem": "https://midias.inforchannel.com.br/wp-content/uploads/2023/06/AI-Automation-scaled.jpg",
+      "url_origem": "https://inforchannel.com.br/2023/06/09/automation-anywhere-adota-ia-generativa-em-sua-plataforma-de-automacao/",
+      "descricao": "Automation Anywhere adota IA generativa em sua plataforma de automação - Inforchannel"
+    }
+  ]
 }
