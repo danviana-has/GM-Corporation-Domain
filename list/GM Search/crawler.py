@@ -1,83 +1,63 @@
-import requests
-from bs4 import BeautifulSoup
-import json
+import sys
 import os
-import re
-from urllib.parse import urljoin
+import json
+from duckduckgo_search import DDGS
 
-# Lista de portais que o seu GM Search vai vasculhar
-SITES_ALVO = [
-    "https://www.python.org",
-    "https://news.ycombinator.com",
-    "https://en.wikipedia.org/wiki/Main_Page"
-]
+def rodar_motor_ddg(termo_busca):
+    if not termo_busca:
+        print("⚠️ Nenhum termo de busca fornecido.")
+        return
 
-def rodar_crawler():
-    index_cache = {
+    print(f"🤖 Motor GM Search acionando índice DuckDuckGo para: '{termo_busca}'")
+    
+    banco_cache = {
+        "termo_atual": termo_busca,
         "paginas": [],
         "imagens": []
     }
     
-    headers = {
-        'User-Agent': 'GMBackendBot/1.0 (+https://gmcorporation.com.br)'
-    }
-    
-    print("🤖 Iniciando o Crawler do GM Search...")
-    
-    for url in SITES_ALVO:
-        try:
-            print(f"🔗 Rastreando em tempo real: {url}")
-            resposta = requests.get(url, headers=headers, timeout=10)
-            if resposta.status_code != 200: 
-                print(f"⚠️ Ignorando {url} (Status {resposta.status_code})")
-                continue
-            
-            soup = BeautifulSoup(resposta.text, 'html.parser')
-            
-            # --- INDEXADOR DE SITES (TEXTO) ---
-            titulo = soup.title.string.strip() if soup.title else url
-            
-            # Limpa tags que guardam códigos visuais e não conteúdo legível
-            for s in soup(["script", "style", "meta", "noscript"]): 
-                s.decompose()
+    # Inicializa o gerenciador da biblioteca pronta
+    try:
+        with DDGS() as ddgs:
+            # 1. Busca bilhões de páginas web prontas
+            print("🌐 Coletando páginas...")
+            resultados_web = ddgs.text(termo_busca, max_results=15)
+            for item in resultados_web:
+                banco_cache["paginas"].append({
+                    "titulo": item.get("title", "Sem título"),
+                    "url": item.get("href", ""),
+                    "conteudo": item.get("body", "Sem resumo disponível.")
+                })
                 
-            texto_limpo = " ".join(soup.get_text().split())
-            
-            index_cache["paginas"].append({
-                "titulo": titulo,
-                "url": url,
-                "conteudo": texto_limpo[:1000] # Limita os primeiros 1000 caracteres para otimizar o tamanho do JSON
+            # 2. Busca bilhões de imagens prontas
+            print("📷 Coletando imagens...")
+            resultados_img = ddgs.images(termo_busca, max_results=16)
+            for item in resultados_img:
+                banco_cache["imagens"].append({
+                    "url_imagem": item.get("image", ""),
+                    "url_origem": item.get("url", ""),
+                    "descricao": item.get("title", termo_busca)
+                })
+                
+    except Exception as e:
+        print(f"❌ Erro ao coletar dados da biblioteca: {e}")
+        # Garante que o arquivo não quebre caso a biblioteca sofra rate limit
+        if not banco_cache["paginas"]:
+            banco_cache["paginas"].append({
+                "titulo": "Limite temporário atingido",
+                "url": "https://duckduckgo.com",
+                "conteudo": "O motor recebeu muitas requisições seguidas. Aguarde um instante para rodar a busca novamente."
             })
-            
-            # --- INDEXADOR DE IMAGENS ---
-            for img in soup.find_all('img'):
-                src = img.get('src')
-                alt = img.get('alt', '').strip()
-                
-                # O robô só armazena a imagem se ela tiver uma descrição (alt) para podermos pesquisar
-                if src and alt:
-                    # Resolve links relativos (ex: /img/logo.png vira https://site.com/img/logo.png)
-                    src_absoluto = urljoin(url, src)
-                    
-                    index_cache["imagens"].append({
-                        "url_imagem": src_absoluto,
-                        "url_origem": url,
-                        "descricao": alt
-                    })
-                    
-        except Exception as e:
-            print(f"❌ Erro ao processar o alvo {url}: {e}")
-            
-    # --- SALVAMENTO BLINDADO DO INDEXADOR ---
-    # os.path.abspath(__file__) descobre a rota exata deste script no Ubuntu do GitHub Actions,
-    # contornando de forma limpa o problema do espaço na pasta "GM Search".
+
+    # Grava o resultado JSON pronto direto na pasta correta do repositório
     diretorio_atual = os.path.dirname(os.path.abspath(__file__))
-    caminho_salvar = os.path.join(diretorio_atual, 'index_cache.json')
+    caminho_salvamento = os.path.join(diretorio_atual, 'index_cache.json')
     
-    with open(caminho_salvar, 'w', encoding='utf-8') as f:
-        json.dump(index_cache, f, ensure_ascii=False, indent=2)
-    
-    print(f"💾 Sucesso! Banco de dados atualizado e indexado em: {caminho_salvar}")
+    with open(caminho_salvamento, 'w', encoding='utf-8') as f:
+        json.dump(banco_cache, f, ensure_ascii=False, indent=2)
+        
+    print(f"💾 Banco de dados atualizado com sucesso em: {caminho_salvamento}")
 
 if __name__ == "__main__":
-    rodar_crawler()
+    termo = sys.argv[1] if len(sys.argv) > 1 else "Tecnologia"
+    rodar_motor_ddg(termo)
