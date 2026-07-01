@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       termo:
-        description: 'Filtrar termo no banco de dados aberto do Common Crawl'
+        description: 'Digite o termo para buscar na biblioteca DuckDuckGo'
         required: true
-        default: 'Tecnologia'
+        default: 'Automação'
 
 jobs:
-  download-open-database:
+  run-library-search:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -20,55 +20,20 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Baixar o Indice JSON Pronto (Common Crawl)
-      run: |
-        # O Common Crawl disponibiliza APIs de índice de texto e arquivos JSON prontos de bilhões de domínios.
-        # Capturamos o dump de resultados prontos direto do servidor de dados abertos deles baseado no seu termo.
-        QUERY=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${{ github.event.inputs.termo }}'))")
-        
-        curl -s "https://index.commoncrawl.org/CC-MAIN-2026-05-index?url=${QUERY}&output=json" > bruto.json || echo "[]" > bruto.json
+    - name: Configurar o Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
 
-    - name: Formatar Banco de Dados para o GM Search
+    - name: Instalar Biblioteca DuckDuckGo Search
       run: |
-        python3 -c "
-        import json, os
-        
-        banco_cache = {
-            'termo_atual': '${{ github.event.inputs.termo }}',
-            'paginas': [],
-            'imagens': []
-        }
-        
-        if os.path.exists('bruto.json') and os.path.getsize('bruto.json') > 0:
-            with open('bruto.json', 'r', encoding='utf-8') as f:
-                # O formato do Common Crawl entrega um JSON por linha (JSON Lines)
-                for linha in f:
-                    try:
-                        dados_pagina = json.loads(linha.strip())
-                        url = dados_pagina.get('url', '')
-                        host = dados_pagina.get('host', '')
-                        
-                        banco_cache['paginas'].append({
-                            'titulo': host if host else 'Página Indexada',
-                            'url': url,
-                            'conteudo': f'Registro oficial indexado no banco de dados aberto do Common Crawl. Timestamp: {dados_pagina.get(\"timestamp\", \"\")}'
-                        })
-                    except:
-                        continue
-                        
-        # Se vier vazio, cria uma estrutura padrão de segurança
-        if not banco_cache['paginas']:
-            banco_cache['paginas'].append({
-                'titulo': 'Exemplo do Banco Aberto',
-                'url': 'https://commoncrawl.org',
-                'conteudo': 'Nenhum dado retornado para este bloco do índice de bilhões de páginas.'
-            })
-            
-        with open('list/GM Search/index_cache.json', 'w', encoding='utf-8') as f:
-            json.dump(banco_cache, f, ensure_ascii=False, indent=2)
-        "
+        pip install requests duckduckgo-search
 
-    - name: Publicar Banco de Dados no Pages
+    - name: Executar Busca na Web Sob Demanda
+      run: |
+        python "list/GM Search/crawler.py" "${{ github.event.inputs.termo }}"
+
+    - name: Publicar Banco de Dados Atualizado no Pages
       run: |
         git config --global user.name 'GM Backend Bot'
         git config --global user.email 'bot@gmcorporation.com.br'
@@ -76,7 +41,7 @@ jobs:
         git add "list/GM Search/index_cache.json"
         
         if ! git diff --quiet --cached; then
-          git commit -m "⚙️ [GM Search] Banco de dados Common Crawl atualizado para '${{ github.event.inputs.termo }}'"
+          git commit -m "⚙️ [GM Search] Banco de dados atualizado com a biblioteca para '${{ github.event.inputs.termo }}'"
           git pull --rebase origin main
           git push origin main
         fi
