@@ -1,10 +1,10 @@
 {
-  "termo_atual": "Tecnologia",
+  "termo_atual": "Automação",
   "paginas": [
     {
-      "titulo": "Exemplo do Banco Aberto",
-      "url": "https://commoncrawl.org",
-      "conteudo": "Nenhum dado retornado para este bloco do índice de bilhões de páginas."
+      "titulo": "Limite temporário atingido",
+      "url": "https://duckduckgo.com",
+      "conteudo": "O motor recebeu muitas requisições seguidas. Aguarde um instante para rodar a busca novamente."
     }
   ],
   "imagens": []
