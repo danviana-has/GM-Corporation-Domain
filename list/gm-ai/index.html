@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM AI - Qwen Coder Pipeline</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        :root {
+            --bg-color: #0d1117; --chat-bg: #161b22; --border-color: #30363d;
+            --text-primary: #c9d1d9; --text-secondary: #8b949e; --accent-color: #58a6ff;
+            --user-msg: #1f6feb; --ai-msg: #21262d;
+        }
+        body { background-color: var(--bg-color); color: var(--text-primary); display: flex; justify-content: center; align-items: center; height: 100vh; padding: 20px; }
+        .chat-container { width: 100%; max-width: 850px; height: 85vh; background-color: var(--chat-bg); border: 1px solid var(--border-color); border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); }
+        header { padding: 18px 24px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background-color: rgba(0, 0, 0, 0.1); }
+        .ai-info h1 { font-size: 1.25rem; font-weight: 600; }
+        .ai-info p { font-size: 0.8rem; color: var(--text-secondary); }
+        .status-badge { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #58a6ff; background: rgba(88, 166, 255, 0.1); padding: 4px 10px; border-radius: 12px; border: 1px solid rgba(88, 166, 255, 0.2); }
+        .status-dot { width: 6px; height: 6px; background-color: var(--accent-color); border-radius: 50%; }
+        .chat-messages { flex: 1; padding: 24px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; }
+        .message { max-width: 75%; padding: 12px 16px; border-radius: 8px; font-size: 0.95rem; line-height: 1.5; }
+        .message.user { background-color: var(--user-msg); color: #ffffff; align-self: flex-end; border-bottom-right-radius: 2px; }
+        .message.ai { background-color: var(--ai-msg); color: var(--text-primary); align-self: flex-start; border-top-left-radius: 2px; border: 1px solid var(--border-color); white-space: pre-wrap; }
+        .message.system { background-color: transparent; color: var(--text-secondary); font-style: italic; align-self: center; font-size: 0.85rem; }
+        .chat-input-area { padding: 18px 24px; border-top: 1px solid var(--border-color); background-color: rgba(0, 0, 0, 0.1); }
+        .input-wrapper { display: flex; gap: 12px; }
+        input { flex: 1; background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 6px; padding: 12px 16px; color: var(--text-primary); font-size: 0.95rem; outline: none; }
+        input:focus { border-color: var(--accent-color); }
+        button { background-color: #238636; color: #ffffff; border: none; border-radius: 6px; padding: 0 20px; font-weight: 500; cursor: pointer; }
+        button:hover { background-color: #2ea44f; }
+        button:disabled { background-color: var(--border-color); color: var(--text-secondary); cursor: not-allowed; }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <header>
+            <div class="ai-info">
+                <h1>GM AI</h1>
+                <p>Engine: GitHub Actions Pipeline + Qwen Coder</p>
+            </div>
+            <div class="status-badge" id="pipelineStatus">
+                <div class="status-dot"></div>
+                <span id="statusText">Pronto</span>
+            </div>
+        </header>
+
+        <div class="chat-messages" id="chatBox">
+            <div class="message ai">Módulo GM AI operacional. Envie sua instrução para disparar o pipeline do GitHub Actions.</div>
+        </div>
+
+        <div class="chat-input-area">
+            <div class="input-wrapper">
+                <input type="text" id="userInput" placeholder="Escreva o prompt para a Action processar..." autocomplete="off">
+                <button id="sendBtn" onclick="sendToPipeline()">Disparar Action</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const username = "danviana-has";
+        const repoName = "GM-Corporation-Domain";
+        const chatFileUrl = `https://raw.githubusercontent.com/${username}/${repoName}/main/list/gm-ai/chat.json`;
+
+        const chatBox = document.getElementById('chatBox');
+        const userInput = document.getElementById('userInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const statusText = document.getElementById('statusText');
+
+        let lastSha = "";
+
+        // Carrega o histórico ao abrir e verifica atualizações a cada 5 segundos
+        async function loadChat() {
+            try {
+                // Força o browser a ignorar o cache do arquivo para ver a resposta da Action em tempo real
+                const response = await fetch(`${chatFileUrl}?t=${new Date().getTime()}`);
+                if (!response.ok) return;
+                
+                const data = await response.json();
+                
+                // Se a última mensagem for da IA, libera o input de volta
+                if (data.messages && data.messages.length > 0) {
+                    const lastMsg = data.messages[data.messages.length - 1];
+                    renderMessages(data.messages);
+                    
+                    if (lastMsg.role === 'assistant') {
+                        userInput.disabled = false;
+                        sendBtn.disabled = false;
+                        statusText.innerText = "Pronto";
+                    } else {
+                        statusText.innerText = "Action Executando...";
+                    }
+                }
+            } catch (e) { console.log("Aguardando inicialização do chat.json"); }
+        }
+
+        function renderMessages(messages) {
+            chatBox.innerHTML = '';
+            messages.forEach(msg => {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `message ${msg.role === 'user' ? 'user' : 'ai'}`;
+                msgDiv.innerText = msg.content;
+                chatBox.appendChild(msgDiv);
+            });
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Para simplificar a gravação via client-side sem expor tokens, você pode baixar o chat.json gerado localmente pelo script gerador ou submeter via commit manual. 
+        // Para integração total automática via API do GitHub direto da página, você precisará colar temporariamente um Fine-grained Token aqui se quiser enviar inputs pelo botão.
+        async function sendToPipeline() {
+            const text = userInput.value.trim();
+            if (!text) return;
+
+            userInput.disabled = true;
+            sendBtn.disabled = true;
+            statusText.innerText = "Enviando Prompt...";
+
+            // Como dica operacional: salve um arquivo chamado chat.json dentro de 'list/gm-ai/' no seu repositório com o formato: {"messages": [{"role": "user", "content": "Seu prompt aqui"}]}
+            // Isso vai triggar o Workflow do Actions automaticamente!
+            
+            userInput.value = "Abra o GitHub e mude o conteúdo de chat.json para disparar a IA!";
+        }
+
+        setInterval(loadChat, 5000);
+        loadChat();
+    </script>
+</body>
+</html>
