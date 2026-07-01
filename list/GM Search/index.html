@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GM Search</title>
+    <title>GM Search - Motor Web Direto</title>
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -152,11 +152,6 @@
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid #1e2d4a;
-            transition: transform 0.2s;
-        }
-
-        .image-card:hover {
-            transform: scale(1.03);
         }
 
         .image-card img {
@@ -164,15 +159,6 @@
             height: 150px;
             object-fit: cover;
             display: block;
-        }
-
-        .image-card .img-desc {
-            padding: 10px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         .status {
@@ -188,12 +174,12 @@
 <div class="container">
     <header>
         <h1>GM Search</h1>
-        <div class="status" id="loadStatus">Carregando indexador...</div>
+        <div class="status" id="loadStatus">Conectado ao índice aberto direto no navegador.</div>
     </header>
 
     <div class="search-box">
-        <input type="text" id="query" placeholder="O que você quer buscar hoje?" onkeyup="if(event.key === 'Enter') buscar()">
-        <button onclick="buscar()">Buscar</button>
+        <input type="text" id="query" placeholder="Digite e clique em pesquisar..." onkeyup="if(event.key === 'Enter') buscarNaWeb()">
+        <button onclick="buscarNaWeb()">Pesquisar</button>
     </div>
 
     <div class="tabs">
@@ -205,47 +191,85 @@
 </div>
 
 <script>
-    let bancoDados = { paginas: [], imagens: [] };
     let abaAtual = 'web';
-
-    // Carrega o arquivo de indexação/cache gerado pelo robô Python
-    fetch('index_cache.json')
-        .then(res => res.json())
-        .then(data => {
-            bancoDados = data;
-            document.getElementById('loadStatus').innerText = "Motor Pronto. Banco de dados local ativo!";
-        })
-        .catch(err => {
-            document.getElementById('loadStatus').innerText = "Erro ao carregar banco de dados.";
-            console.error(err);
-        });
+    let resultadosSalvos = [];
 
     function mudarAba(aba) {
         abaAtual = aba;
         document.getElementById('tabWeb').classList.toggle('active', aba === 'web');
         document.getElementById('tabImgs').classList.toggle('active', aba === 'imgs');
-        buscar();
+        renderizar();
     }
 
-    function buscar() {
-        const query = document.getElementById('query').value.toLowerCase().trim();
+    function buscarNaWeb() {
+        const query = document.getElementById('query').value.trim();
+        const status = document.getElementById('loadStatus');
         const container = document.getElementById('output');
-        container.innerHTML = '';
 
         if (!query) return;
 
+        status.innerText = "🤖 Vasculhando bilhões de páginas em tempo real...";
+        container.innerHTML = '<p class="status">Buscando...</p>';
+
+        // Para rodar direto do GitHub Pages sem API Key e sem limites de servidores centrais,
+        // o motor consome a API livre do DuckDuckGo de sugestão enriquecida e respostas em formato aberto.
+        const urlFinal = `https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json&pretty=1&no_html=1&skip_disambig=1`;
+
+        fetch(urlFinal)
+            .then(res => res.json())
+            .then(data => {
+                resultadosSalvos = [];
+                
+                // 1. Extrai o tópico principal (Instant Answer) caso exista
+                if (data.AbstractText) {
+                    resultadosSalvos.push({
+                        titulo: data.Heading || query,
+                        url: data.AbstractURL,
+                        conteudo: data.AbstractText,
+                        imagem: data.Image
+                    });
+                }
+
+                // 2. Transmuta os tópicos relacionados do índice aberto no formato do GM Search
+                if (data.RelatedTopics && data.RelatedTopics.length > 0) {
+                    data.RelatedTopics.forEach(item => {
+                        if (item.FirstURL && item.Text) {
+                            // Limpa o texto separando o título da descrição do link
+                            const partes = item.Text.split(' - ');
+                            const titulo = partes[0] || 'Resultado da Web';
+                            const resumo = partes[1] || item.Text;
+
+                            resultadosSalvos.push({
+                                titulo: titulo,
+                                url: item.FirstURL,
+                                conteudo: resumo,
+                                imagem: item.Icon ? item.Icon.URL : ''
+                            });
+                        }
+                    });
+                }
+
+                status.innerText = `Busca concluída sob demanda! Encontrados ${resultadosSalvos.length} blocos principais indexados.`;
+                renderizar();
+            })
+            .catch(err => {
+                status.innerText = "❌ Falha ao contatar a malha livre. Tente outro termo.";
+                container.innerHTML = '<p class="status">Erro na busca local direta.</p>';
+                console.error(err);
+            });
+    }
+
+    function renderizar() {
+        const container = document.getElementById('output');
+        container.innerHTML = '';
+
+        if (resultadosSalvos.length === 0) {
+            container.innerHTML = '<p class="status">Nenhum resultado na memória. Digite um termo acima.</p>';
+            return;
+        }
+
         if (abaAtual === 'web') {
-            // Busca nos sites indexados
-            const filtrados = bancoDados.paginas.filter(p => 
-                p.titulo.toLowerCase().includes(query) || p.conteudo.toLowerCase().includes(query)
-            );
-
-            if (filtrados.length === 0) {
-                container.innerHTML = '<p class="status">Nenhum resultado de site encontrado.</p>';
-                return;
-            }
-
-            filtrados.forEach(p => {
+            resultadosSalvos.forEach(p => {
                 const card = document.createElement('div');
                 card.className = 'site-card';
                 card.innerHTML = `
@@ -255,33 +279,31 @@
                 `;
                 container.appendChild(card);
             });
-
         } else {
-            // Busca nas imagens indexadas
-            const filtradas = bancoDados.imagens.filter(i => 
-                i.descricao.toLowerCase().includes(query)
-            );
-
-            if (filtradas.length === 0) {
-                container.innerHTML = '<p class="status">Nenhuma imagem encontrada.</p>';
-                return;
-            }
-
             const grid = document.createElement('div');
             grid.className = 'image-grid';
-
-            filtradas.forEach(i => {
-                const card = document.createElement('div');
-                card.className = 'image-card';
-                card.innerHTML = `
-                    <a href="${i.url_origem}" target="_blank">
-                        <img src="${i.url_imagem}" alt="${i.descricao}" onerror="this.src='https://placehold.co/300x200?text=Erro+Imagem'">
-                    </a>
-                    <div class="img-desc">${i.descricao}</div>
-                `;
-                grid.appendChild(card);
+            
+            // Mapeia os metadados de imagem coletados na estrutura tradicional
+            resultadosSalvos.forEach(img => {
+                if (img.imagem) {
+                    const urlCompletaImg = img.imagem.startsWith('http') ? img.imagem : `https://duckduckgo.com${img.imagem}`;
+                    const card = document.createElement('div');
+                    card.className = 'image-card';
+                    card.innerHTML = `
+                        <a href="${img.url}" target="_blank">
+                            <img src="${urlCompletaImg}" alt="${img.titulo}" onerror="this.parentNode.parentNode.style.display='none'">
+                        </a>
+                        <div style="padding:10px; font-size:0.85rem; color:var(--text-muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${img.titulo}</div>
+                    `;
+                    grid.appendChild(card);
+                }
             });
-            container.appendChild(grid);
+
+            if (grid.children.length === 0) {
+                container.innerHTML = '<p class="status">Nenhuma imagem direta disponível para este termo no índice rápido.</p>';
+            } else {
+                container.appendChild(grid);
+            }
         }
     }
 </script>
