@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GM EDU - Banco de Dados Local</title>
+    <title>GM EDU - Banco de Dados Real</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
         :root {
@@ -21,7 +21,8 @@
         .subject-card h3 { margin-bottom: 14px; font-size: 1.15rem; border-bottom: 1px solid rgba(48, 54, 61, 0.5); padding-bottom: 6px; }
         .chapter-list { display: flex; flex-direction: column; gap: 8px; }
         .chapter-btn { background: var(--bg-color); border: 1px solid var(--card-border); color: var(--text-primary); padding: 10px 12px; border-radius: 6px; text-align: left; font-size: 0.85rem; cursor: pointer; width: 100%; display: flex; justify-content: space-between; }
-        .chapter-btn:hover { border-color: var(--accent-color); color: var(--accent-color); }
+        .chapter-btn:hover:not(:disabled) { border-color: var(--accent-color); color: var(--accent-color); }
+        .chapter-btn:disabled { color: var(--text-secondary); opacity: 0.3; cursor: not-allowed; }
         .q-count { font-size: 0.75rem; color: var(--text-secondary); background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px; }
         .quiz-area { display: none; }
         .question-box { font-size: 1.2rem; margin-bottom: 20px; line-height: 1.5; }
@@ -44,7 +45,7 @@
         </header>
 
         <div id="selectionScreen">
-            <div id="mainLoading" class="status-msg">Montando banco de dados local...</div>
+            <div id="mainLoading" class="status-msg">Lendo arquivo do banco de dados local (opentdb_database.json)...</div>
             <div class="grid-subjects" id="subjectsContainer" style="display: none;"></div>
         </div>
 
@@ -91,16 +92,18 @@
         const backBtn = document.getElementById('backBtn');
         const appTitle = document.getElementById('appTitle');
 
-        // Carrega o arquivo JSON estático gerado pelo Actions
+        // Carrega rigorosamente o arquivo do repositório
         async function initDatabase() {
             try {
                 const response = await fetch(`opentdb_database.json?t=${new Date().getTime()}`);
+                if (!response.ok) throw new Error();
+                
                 localDatabase = await response.json();
                 mainLoading.style.display = 'none';
                 subjectsContainer.style.display = 'grid';
                 renderMenu();
             } catch (error) {
-                mainLoading.innerText = "Aguardando geração do arquivo opentdb_database.json pelo Actions Backend...";
+                mainLoading.innerHTML = `<span style="color: #ff6b6b;">Erro: Arquivo 'opentdb_database.json' não encontrado.<br>Aguarde o processamento do pipeline do GitHub Actions.</span>`;
             }
         }
 
@@ -113,13 +116,23 @@
                 
                 let buttonsHtml = '';
                 niveisConfig.forEach(nivel => {
-                    // Conta fisicamente quantas perguntas existem no banco local para essa combinação
-                    const totalPerguntas = localDatabase.filter(q => q.category_id == catId || (q.category && q.difficulty === nivel.diff && (catId == 18 && q.category.includes('Computers') || catId == 19 && q.category.includes('Mathematics') || catId == 17 && q.category.includes('Science & Nature') || catId == 22 && q.category.includes('Geography') || catId == 23 && q.category.includes('History') || catId == 24 && q.category.includes('Politics')))).length;
+                    const totalPerguntas = localDatabase.filter(q => {
+                        if (q.difficulty !== nivel.diff) return false;
+                        if (catId == 18) return q.category.includes('Computers');
+                        if (catId == 19) return q.category.includes('Mathematics');
+                        if (catId == 17) return q.category.includes('Science & Nature');
+                        if (catId == 22) return q.category.includes('Geography');
+                        if (catId == 23) return q.category.includes('History');
+                        if (catId == 24) return q.category.includes('Politics');
+                        return false;
+                    }).length;
+
+                    const isDisabled = totalPerguntas === 0 ? "disabled" : "";
 
                     buttonsHtml += `
-                        <button class="chapter-btn" onclick="startQuiz('${catId}', '${nivel.diff}', '${categoriasMap[catId]} - ${nivel.diff.toUpperCase()}')">
+                        <button class="chapter-btn" ${isDisabled} onclick="startQuiz('${catId}', '${nivel.diff}', '${categoriasMap[catId]} - ${nivel.diff.toUpperCase()}')">
                             <span>${nivel.label}</span>
-                            <span class="q-count">${totalPerguntas || 50} Q</span>
+                            <span class="q-count">${totalPerguntas} Q</span>
                         </button>
                     `;
                 });
@@ -138,10 +151,8 @@
             backBtn.style.display = 'block';
             appTitle.innerText = title;
 
-            // Filtra o banco local inteiro trazendo TODAS as correspondentes
             currentQuestions = localDatabase.filter(q => {
-                const matchDiff = q.difficulty === difficulty;
-                if (!matchDiff) return false;
+                if (q.difficulty !== difficulty) return false;
                 if (catId == 18) return q.category.includes('Computers');
                 if (catId == 19) return q.category.includes('Mathematics');
                 if (catId == 17) return q.category.includes('Science & Nature');
@@ -150,13 +161,6 @@
                 if (catId == 24) return q.category.includes('Politics');
                 return false;
             });
-
-            // Se o banco local falhar ou estiver carregando, cria um fallback seguro para não quebrar
-            if(currentQuestions.length === 0) {
-                alert("Sincronizando questões... Carregando simulado padrão.");
-                showSelectionScreen();
-                return;
-            }
 
             currentQuestionIdx = 0;
             score = 0;
@@ -209,7 +213,7 @@
         function showResults() {
             quizScreen.style.display = 'none';
             resultScreen.style.display = 'block';
-            document.getElementById('scoreText').innerText = `Você concluiu o banco completo! Acertos: ${score} de ${currentQuestions.length}`;
+            document.getElementById('scoreText').innerText = `Concluído: ${score} acertos de ${currentQuestions.length} questões.`;
         }
 
         function showSelectionScreen() {
