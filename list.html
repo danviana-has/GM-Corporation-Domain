@@ -1,17 +1,292 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Domains Product</title>
+    <style>
+        /* --- Reset e Variáveis de Cor --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --card-border: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+            --live-indicator: #2ea44f;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* --- Container Principal --- */
+        .dashboard {
+            width: 100%;
+            max-width: 800px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- Cabeçalho --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        /* --- Indicador de Sincronização --- */
+        .status-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(46, 164, 79, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(46, 164, 79, 0.2);
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--live-indicator);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .pulse-dot::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: var(--live-indicator);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: pulse 1.8s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+
+        .status-text {
+            font-size: 0.75rem;
+            color: #48c774;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Lista de Projetos --- */
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .loading-status {
+            color: var(--text-secondary);
+            font-style: italic;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .project-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            padding: 16px 20px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .project-item:hover {
+            border-color: var(--accent-color);
+            background-color: rgba(88, 166, 255, 0.03);
+            transform: translateY(-1px);
+        }
+
+        .project-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .folder-icon {
+            width: 20px;
+            height: 16px;
+            background-color: #e3b341;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .folder-icon::before {
+            content: '';
+            width: 8px;
+            height: 4px;
+            background-color: #e3b341;
+            position: absolute;
+            top: -3px;
+            left: 0;
+            border-radius: 2px 2px 0 0;
+        }
+
+        .project-name {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .project-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-left: 5px;
+        }
+
+        .btn-open {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: rgba(88, 166, 255, 0.1);
+            color: var(--accent-color);
+            padding: 8px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .btn-open:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Todos os nossos dominios Web:</h1>
-    <div class="list">
-        <p>Desenvolvimento...</p>
-    </div>
+
+    <main class="dashboard">
+        <header>
+            <h1>Todos os nossos domínios Web</h1>
+            <div class="status-container" title="Sincronizando com o repositório a cada 1 minuto">
+                <div class="pulse-dot"></div>
+                <div class="status-text">GitHub Sync Ativo</div>
+            </div>
+        </header>
+
+        <div class="list" id="projectList">
+            <div class="loading-status">Sincronizando com a pasta 'list' do repositório...</div>
+        </div>
+    </main>
+
+    <script>
+        // CONFIGURAÇÃO AUTOMÁTICA EXTRAÍDA DA URL DO GITHUB PAGES
+        // Exemplo: se sua URL for https://seu-usuario.github.io/seu-repositorio/
+        const hostnameParts = window.location.hostname.split('.');
+        const username = hostnameParts[0]; 
+        const pathParts = window.location.pathname.split('/').filter(Boolean);
+        const repoName = pathParts[0] || ''; 
+
+        const container = document.getElementById('projectList');
+
+        async function fetchGitHubProjects() {
+            // Se você testar localmente (localhost), a URL da API do GitHub não vai se auto-configurar direito.
+            // Para testar localmente no Pages, você pode descomentar e preencher as linhas abaixo manualmente:
+            // const username = "SEU_USUARIO_AQUI";
+            // const repoName = "SEU_REPOSITORIO_AQUI";
+
+            if (!username || !repoName || username === "localhost" || username === "127") {
+                container.innerHTML = '<div class="loading-status" style="color: #e3b341;">Para funcionar, publique este repositório no GitHub Pages ou configure as variáveis no código.</div>';
+                return;
+            }
+
+            const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/list`;
+
+            try {
+                const response = await fetch(apiUrl);
+                
+                if (response.status === 404) {
+                    container.innerHTML = '<div class="loading-status">A pasta "list" ainda não foi criada no seu repositório.</div>';
+                    return;
+                }
+
+                const contents = await response.json();
+
+                // Filtra apenas o que for diretório (pasta) dentro de /list
+                const folders = contents.filter(item => item.type === 'dir');
+
+                if (folders.length === 0) {
+                    container.innerHTML = '<div class="loading-status">Nenhuma pasta de projeto encontrada em /list.</div>';
+                    return;
+                }
+
+                container.innerHTML = ''; // Limpa o status antigo
+
+                folders.forEach(folder => {
+                    const item = document.createElement('div');
+                    item.className = 'project-item';
+                    
+                    // Constrói o link apontando diretamente para o index.html da subpasta no GitHub Pages
+                    const projectUrl = `https://${username}.github.io/${repoName}/list/${folder.name}/index.html`;
+
+                    item.innerHTML = `
+                        <div class="project-info">
+                            <span class="folder-icon"></span>
+                            <div>
+                                <span class="project-name">${folder.name}</span>
+                                <span class="project-meta">/index.html detectado</span>
+                            </div>
+                        </div>
+                        <a href="${projectUrl}" class="btn-open" target="_blank">
+                            Abrir Projeto ↗
+                        </a>
+                    `;
+                    container.appendChild(item);
+                });
+
+            } catch (error) {
+                console.error("Erro ao buscar dados da API do GitHub:", error);
+                container.innerHTML = '<div class="loading-status" style="color: #ff6b6b;">Erro ao conectar com a API do GitHub.</div>';
+            }
+        }
+
+        // Carrega imediatamente ao abrir a tela
+        fetchGitHubProjects();
+
+        // Faz a verificação a cada 1 minuto (60000 ms)
+        setInterval(fetchGitHubProjects, 60000);
+    </script>
 </body>
 
 </html>
