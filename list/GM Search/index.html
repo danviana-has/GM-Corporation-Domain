@@ -174,7 +174,7 @@
 <div class="container">
     <header>
         <h1>GM Search</h1>
-        <div class="status" id="loadStatus">Conectado ao índice aberto livre de restrições de rede.</div>
+        <div class="status" id="loadStatus">Conectado ao Open Index livre de CORB/CORS.</div>
     </header>
 
     <div class="search-box">
@@ -208,67 +208,56 @@
 
         if (!query) return;
 
-        status.innerText = "🤖 Vasculhando bilhões de páginas em tempo real...";
+        status.innerText = "🤖 Indexando referências globais em tempo real...";
         container.innerHTML = '<p class="status">Buscando...</p>';
 
-        // Remove scripts antigos de consultas anteriores para limpar a memória
         const scriptAntigo = document.getElementById('gms_jsonp_script');
         if (scriptAntigo) scriptAntigo.remove();
 
-        // Criamos uma chamada JSONP injetando o parâmetro &callback=processarRespostaGM
-        // Isso força o servidor do motor a retornar os dados envelopados em uma função JavaScript,
-        // o que ignora completamente a restrição de CORS de qualquer navegador automaticamente.
-        const urlFinal = `https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json&skip_disambig=1&callback=processarRespostaGM`;
+        // Usamos o ecossistema de dados abertos da MediaWiki Core Engine.
+        // O parâmetro format=json & callback=processarRespostaGM com uselang=pt 
+        // força uma entrega Javascript legítima que os navegadores deixam passar sem CORB/CORS.
+        const urlFinal = `https://pt.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(query)}&gsrlimit=15&prop=info|extracts|pageimages&inprop=url&exintro=1&explaintext=1&exsentences=3&piprop=thumbnail&pithumbsize=400&format=json&callback=processarRespostaGM`;
 
         const script = document.createElement('script');
         script.id = 'gms_jsonp_script';
         script.src = urlFinal;
         
-        // Trata erro caso o servidor remoto caia
         script.onerror = function() {
-            status.innerText = "❌ Falha ao contatar a malha livre.";
-            container.innerHTML = '<p class="status">Erro na barreira de conexão externa.</p>';
+            status.innerText = "❌ Falha ao contatar o índice distribuído.";
+            container.innerHTML = '<p class="status">Erro na conexão de rede externa.</p>';
         };
 
         document.body.appendChild(script);
     }
 
-    // Função global que recebe o pacote de dados limpo do motor sem passar pelo bloqueio do navegador
+    // Processador limpo e autorizado pelo navegador
     window.processarRespostaGM = function(data) {
         const status = document.getElementById('loadStatus');
-        const query = document.getElementById('query').value.trim();
-        
         resultadosSalvos = [];
-        
-        // 1. Coleta o resumo principal
-        if (data.AbstractText && data.AbstractURL && !data.AbstractURL.includes('duckduckgo.com')) {
-            resultadosSalvos.push({
-                titulo: data.Heading || query,
-                url: data.AbstractURL,
-                conteudo: data.AbstractText,
-                imagem: data.Image
-            });
-        }
 
-        // 2. Coleta os links diretos da lista relacionada
-        if (data.RelatedTopics && data.RelatedTopics.length > 0) {
-            data.RelatedTopics.forEach(item => {
-                if (item.FirstURL && item.Text && !item.FirstURL.includes('duckduckgo.com')) {
-                    const partes = item.Text.split(' - ');
-                    const titulo = partes[0] || 'Resultado da Web';
-                    const resumo = partes[1] || item.Text;
-
-                    resultadosSalvos.push({
-                        titulo: titulo,
-                        url: item.FirstURL,
-                        conteudo: resumo,
-                        imagem: item.Icon ? item.Icon.URL : ''
-                    });
+        if (data && data.query && data.query.pages) {
+            const paginas = data.query.pages;
+            
+            Object.keys(paginas).forEach(key => {
+                const item = paginas[key];
+                
+                // Pega a imagem caso o índice possua miniatura anexada
+                let imagemUrl = '';
+                if (item.thumbnail && item.thumbnail.source) {
+                    imagemUrl = item.thumbnail.source;
                 }
+
+                resultadosSalvos.push({
+                    titulo: item.title || 'Resultado do Índice',
+                    url: item.fullurl || 'https://pt.wikipedia.org', // URL Direta do site pesquisado
+                    conteudo: item.extract || 'Clique no link para ler o conteúdo indexado completo.',
+                    imagem: imagemUrl
+                });
             });
         }
 
-        status.innerText = `Busca concluída! Encontrados ${resultadosSalvos.length} sites diretos na malha global.`;
+        status.innerText = `Busca concluída! Exibindo ${resultadosSalvos.length} resultados diretos da malha aberta.`;
         renderizar();
     };
 
@@ -277,7 +266,7 @@
         container.innerHTML = '';
 
         if (resultadosSalvos.length === 0) {
-            container.innerHTML = '<p class="status">Nenhum resultado direto para este termo. Tente outra palavra-chave.</p>';
+            container.innerHTML = '<p class="status">Nenhum resultado direto encontrado. Tente outra palavra-chave.</p>';
             return;
         }
 
@@ -296,14 +285,15 @@
             const grid = document.createElement('div');
             grid.className = 'image-grid';
             
+            let imagensExibidas = 0;
             resultadosSalvos.forEach(img => {
                 if (img.imagem) {
-                    const urlCompletaImg = img.imagem.startsWith('http') ? img.imagem : `https://duckduckgo.com${img.imagem}`;
+                    imagensExibidas++;
                     const card = document.createElement('div');
                     card.className = 'image-card';
                     card.innerHTML = `
                         <a href="${img.url}" target="_blank" rel="noopener noreferrer">
-                            <img src="${urlCompletaImg}" alt="${img.titulo}" onerror="this.parentNode.parentNode.style.display='none'">
+                            <img src="${img.imagem}" alt="${img.titulo}" onerror="this.parentNode.parentNode.style.display='none'">
                         </a>
                         <div style="padding:10px; font-size:0.85rem; color:var(--text-muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${img.titulo}</div>
                     `;
@@ -311,8 +301,8 @@
                 }
             });
 
-            if (grid.children.length === 0) {
-                container.innerHTML = '<p class="status">Nenhuma imagem direta disponível para este termo.</p>';
+            if (imagensExibidas === 0) {
+                container.innerHTML = '<p class="status">Nenhuma imagem direta disponível para este termo no índice.</p>';
             } else {
                 container.appendChild(grid);
             }
