@@ -1,55 +1,90 @@
 name: Executar GM Search Crawler
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # Executa de forma automática diariamente à meia-noite
-  workflow_dispatch: # Mantém o botão manual ativo na aba Actions
+  workflow_dispatch:
+    inputs:
+      termo:
+        description: 'Digite o termo para o motor SearXNG buscar na Web agora'
+        required: true
+        default: 'Tecnologia'
 
 jobs:
-  build-and-crawl:
+  run-searxng-engine:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Permissão para o bot commitar o arquivo de volta
+      contents: write
 
     steps:
-    - name: Baixar o codigo do repositorio
+    - name: Baixar o codigo do seu repositorio
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0 # Traz o histórico completo para evitar rejeição de push
+        fetch-depth: 0
 
-    - name: Configurar o Python no servidor
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-
-    - name: Instalar dependencias do robo
+    - name: Baixar e Executar o Motor Pronto SearXNG (Docker)
       run: |
-        pip install requests beautifulsoup4
+        # Inicia a imagem oficial e pronta do motor SearXNG em segundo plano
+        docker run -d -d -p 8080:8080 --name motor_searxng \
+          -e SEARXNG_SETTINGS="{'search': {'formats': ['json']}}" \
+          searxng/searxng:latest
+        
+        # Aguarda 5 segundos para o motor carregar completamente na memória
+        sleep 5
 
-    - name: Executar o Robo Crawler e Indexador
+    - name: Consultar o Motor SearXNG via Terminal
       run: |
-        python "list/GM Search/crawler.py"
+        # Transforma o termo digitado em texto seguro para URL
+        QUERY=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${{ github.event.inputs.termo }}'))")
+        
+        # Faz a requisição direta para o motor SearXNG rodando no servidor
+        # Ele busca tanto os sites (general) quanto as imagens
+        curl -s "http://localhost:8080/search?q=${QUERY}&format=json" > bruto.json
 
-    - name: Salvar Cache e Forçar Sincronizacao
+    - name: Indexar e Formatar Resultados para o GM Search
+      run: |
+        # Script em linha para organizar o retorno do SearXNG no formato do seu index.html
+        python3 -c "
+        import json, os
+        with open('bruto.json', 'r', encoding='utf-8') as f:
+            dados = json.load(f)
+        
+        banco_cache = {
+            'termo_atual': '${{ github.event.inputs.termo }}',
+            'paginas': [],
+            'imagens': []
+        }
+        
+        # Filtra os sites retornados pelo motor
+        for item in dados.get('results', [])[:15]:
+            if 'url' in item and 'title' in item:
+                if item.get('category') == 'images' or 'img_src' in item:
+                    banco_cache['imagens'].append({
+                        'url_imagem': item.get('img_src') or item.get('thumbnail'),
+                        'url_origem': item.get('url'),
+                        'descricao': item.get('title')
+                    })
+                else:
+                    banco_cache['paginas'].append({
+                        'titulo': item.get('title'),
+                        'url': item.get('url'),
+                        'conteudo': item.get('content', 'Sem resumo disponível.')
+                    })
+                    
+        caminho = 'list/GM Search/index_cache.json'
+        with open(caminho, 'w', encoding='utf-8') as f:
+            json.dump(banco_cache, f, ensure_ascii=False, indent=2)
+        "
+
+    - name: Publicar Resultados Atualizados no Pages
       run: |
         git config --global user.name 'GM Backend Bot'
         git config --global user.email 'bot@gmcorporation.com.br'
-        
-        # Garante o alinhamento com a branch principal
         git checkout main
-        
-        # Aspas duplas protegem o espaço no nome da pasta 'GM Search'
         git add "list/GM Search/index_cache.json"
         
-        # Verifica se o arquivo json teve alguma alteração gerada pelo crawler
         if ! git diff --quiet --cached; then
-          git commit -m "⚙️ [GM OS] Banco de dados e domínios sincronizados via Actions"
-          
-          # Puxa modificações externas e aplica o arquivo gerado por cima delas
+          git commit -m "⚙️ [GM Search] Resultados do SearXNG para '${{ github.event.inputs.termo }}' sincronizados"
           git pull --rebase origin main
-          
-          # Envia os dados para o ar
           git push origin main
         else
-          echo "Nenhuma alteração detectada no cache do GM Search. Pulando o push."
+          echo "Nenhum resultado novo detectado."
         fi
