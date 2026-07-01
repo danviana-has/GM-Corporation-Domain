@@ -2,20 +2,20 @@ name: Executar GM Search Crawler
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Executa automaticamente todos os dias à meia-noite
-  workflow_dispatch: # Mantém o botão ativo na aba Actions para você rodar manualmente quando quiser
+    - cron: '0 0 * * *' # Executa de forma automática diariamente à meia-noite
+  workflow_dispatch: # Mantém o botão manual ativo na aba Actions
 
 jobs:
   build-and-crawl:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Permissão obrigatória para salvar o cache json de volta no repositório
+      contents: write # Permissão para o bot commitar o arquivo de volta
 
     steps:
     - name: Baixar o codigo do repositorio
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0 # Baixa o histórico completo para evitar erros de sincronização (rebase)
+        fetch-depth: 0 # Traz o histórico completo para evitar rejeição de push
 
     - name: Configurar o Python no servidor
       uses: actions/setup-python@v5
@@ -35,20 +35,21 @@ jobs:
         git config --global user.name 'GM Backend Bot'
         git config --global user.email 'bot@gmcorporation.com.br'
         
-        # Garante que estamos acompanhando a branch principal de forma limpa
+        # Garante o alinhamento com a branch principal
         git checkout main
         
+        # Aspas duplas protegem o espaço no nome da pasta 'GM Search'
         git add "list/GM Search/index_cache.json"
         
-        # Só tenta commitar e enviar se houver modificações reais no cache
+        # Verifica se o arquivo json teve alguma alteração gerada pelo crawler
         if ! git diff --quiet --cached; then
           git commit -m "⚙️ [GM OS] Banco de dados e domínios sincronizados via Actions"
           
-          # Baixa as alterações remotas recentes e aplica o commit do bot por cima, evitando rejeição
+          # Puxa modificações externas e aplica o arquivo gerado por cima delas
           git pull --rebase origin main
           
-          # Envia os dados atualizados para o repositório
+          # Envia os dados para o ar
           git push origin main
         else
-          echo "Nenhuma alteração detectada no cache. Pulando o push."
+          echo "Nenhuma alteração detectada no cache do GM Search. Pulando o push."
         fi
