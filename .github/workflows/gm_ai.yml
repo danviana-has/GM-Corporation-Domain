@@ -5,14 +5,12 @@ on:
     paths:
       - 'list/gm-ai/chat.json'
 
-# --- ESSE BLOCO DAQUI DA CORREÇÃO DESTRICA O ERRO 403 ---
 permissions:
   contents: write
-# --------------------------------------------------------
 
 jobs:
   inference:
-    runs-runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
