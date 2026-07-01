@@ -3,96 +3,36 @@
         "type": "multiple",
         "difficulty": "easy",
         "category": "Science &amp; Nature",
-        "question": "What is the hottest planet in the Solar System?",
-        "correct_answer": "Venus",
+        "question": "What is the thin, outermost layer of the Earth?",
+        "correct_answer": "Crust",
         "incorrect_answers": [
-            "Mars",
-            "Mercury",
-            "Jupiter"
+            "Exosphere",
+            "Mantle",
+            "Outer Core"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Science &amp; Nature",
-        "question": "Which of the following is considered classical conditioning?",
-        "correct_answer": "Pavlov&#039;s dog experiments",
+        "question": "Which scientific unit is named after an Italian nobleman?",
+        "correct_answer": "Volt",
         "incorrect_answers": [
-            "Skinner box experiment",
-            "Schr&ouml;dinger&#039;s cat experiment",
-            "Harlow&rsquo;s monkey experiments"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "The medical condition osteoporosis affects which part of the body?",
-        "correct_answer": "Bones",
-        "incorrect_answers": [
-            "Skin",
-            "Brain",
-            "Heart"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "What common name is given to the medial condition, tibial stress syndrome (MTSS)?",
-        "correct_answer": "Shin Splints",
-        "incorrect_answers": [
-            "Tennis Elbow",
-            "Carpal Tunnel",
-            "Housemaid&#039;s Knee"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "A positron is an antiparticle of a what?",
-        "correct_answer": "Electron",
-        "incorrect_answers": [
-            "Neutron",
-            "Proton",
-            "Photon"
+            "Pascal",
+            "Ohm",
+            "Hertz"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "Science &amp; Nature",
-        "question": "What is an example of a bacterial pathogen?",
-        "correct_answer": "Cholera",
-        "incorrect_answers": [
-            "Measles ",
-            "AIDS",
-            "Ringworm"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "This element, when overcome with extreme heat and pressure, creates diamonds.",
+        "question": "Which element has the highest melting point?",
         "correct_answer": "Carbon",
         "incorrect_answers": [
-            "Nitrogen",
-            "Oxygen",
-            "Hydrogen"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "In human biology, a circadium rhythm relates to a period of roughly how many hours?",
-        "correct_answer": "24",
-        "incorrect_answers": [
-            "8",
-            "16",
-            "32"
+            "Tungsten",
+            "Platinum",
+            "Osmium"
         ]
     },
     {
@@ -111,210 +51,6 @@
         "type": "multiple",
         "difficulty": "hard",
         "category": "Science &amp; Nature",
-        "question": "How many types of quarks are there in the standard model of physics?",
-        "correct_answer": "6",
-        "incorrect_answers": [
-            "2",
-            "3",
-            "4"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "Which is the most abundant element in the universe?",
-        "correct_answer": "Hydrogen",
-        "incorrect_answers": [
-            "Helium",
-            "Lithium",
-            "Oxygen"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "Stars consist mainly of hydrogen and which other gas?",
-        "correct_answer": "Helium",
-        "incorrect_answers": [
-            "Oxygen",
-            "Argon",
-            "Nitrogen"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What causes Lyme disease?",
-        "correct_answer": "A bacteria",
-        "incorrect_answers": [
-            "A virus",
-            "A parasitic worm",
-            "An amoeba"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "What is the scientific name of the red fox?",
-        "correct_answer": "Vulpes Vulpes",
-        "incorrect_answers": [
-            "Vulpes Redus",
-            "Red Fox",
-            "Vulpes Vulpie"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What is the molecular formula of the active component of chili peppers(Capsaicin)?",
-        "correct_answer": "C18H27NO3",
-        "incorrect_answers": [
-            "C21H23NO3",
-            "C6H4Cl2",
-            "C13H25NO4"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "The medial meniscus forms which part of what joint in the human body?",
-        "correct_answer": "Knee",
-        "incorrect_answers": [
-            "Elbow",
-            "Ankle",
-            "Shoulder"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "The Axiom of Preventive Medicine states that people with ___ risk for a disease should be screened and we should treat ___ of those people.",
-        "correct_answer": "low, all",
-        "incorrect_answers": [
-            "low, some",
-            "high, all",
-            "high, some"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "Which of these two plates are best know for forming earthquakes and tsunami&#039;s? ",
-        "correct_answer": "Convergent Plate Boundaries/Oceanic Crust",
-        "incorrect_answers": [
-            "Divergent Plate Boundaries/Convergent/Oceanic Crust",
-            "Transform Plate Boundaries/Divergent Plate Boundaries",
-            "Oceanic &amp; Continental Crust/Transform Plate Boundaries"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "Which of these elements on the Periodic Table is a Noble Gas?",
-        "correct_answer": "Neon",
-        "incorrect_answers": [
-            "Potassium",
-            "Iodine",
-            "Colbalt"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "How many hearts does an octopus have?",
-        "correct_answer": "Three",
-        "incorrect_answers": [
-            "One",
-            "Two",
-            "Four"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "In the Scoville scale, what is the hottest chemical?",
-        "correct_answer": "Resiniferatoxin",
-        "incorrect_answers": [
-            "Capsaicin",
-            "Dihydrocapsaicin",
-            "Tinyatoxin"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "How much radiation does a banana emit?",
-        "correct_answer": "0.1 Microsievert",
-        "incorrect_answers": [
-            "0.3 Microsievert",
-            "0.5 Microsievert",
-            "0.7 Microsievert"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "What is the standard SI unit for luminous intensity?",
-        "correct_answer": "Candela",
-        "incorrect_answers": [
-            "Lumen",
-            "Faraday",
-            "Coulomb"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "What is the scientific name of the knee cap?",
-        "correct_answer": "Patella",
-        "incorrect_answers": [
-            "Femur",
-            "Foramen Magnum",
-            "Scapula"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "How many chromosomes are in your body cells?",
-        "correct_answer": "23",
-        "incorrect_answers": [
-            "21",
-            "22",
-            "24"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What is the mathematical formula of Ohm&#039;s law?",
-        "correct_answer": "V = I*R",
-        "incorrect_answers": [
-            "I = V*R",
-            "R = V*I",
-            "V = I / R"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
         "question": "What causes the sound of a heartbeat?",
         "correct_answer": "Closure of the heart valves",
         "incorrect_answers": [
@@ -327,192 +63,60 @@
         "type": "multiple",
         "difficulty": "medium",
         "category": "Science &amp; Nature",
-        "question": "When the Falcon Heavy was launched on it&#039;s test flight, what was the only part of the operation that failed?",
-        "correct_answer": "Center Core Landing",
-        "incorrect_answers": [
-            "Side Booster Landing",
-            "Deployment of Starman",
-            "Ignition and Liftoff"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "What is the &quot;powerhouse&quot; of the Eukaryotic animal cell?",
+        "question": "What cell organelle is known as &quot;the powerhouse of the cell?&quot;",
         "correct_answer": "Mitochondria",
         "incorrect_answers": [
             "Nucleus",
-            "Chloroplast",
-            "Endoplasmic Reticulum"
+            "Golgi apparatus",
+            "Endoplasmic reticulum"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Science &amp; Nature",
-        "question": "What polymer is used to make CDs, safety goggles and riot shields?",
-        "correct_answer": "Polycarbonate",
+        "question": "What is radiation measured in?",
+        "correct_answer": "Gray ",
         "incorrect_answers": [
-            "Rubber",
-            "Nylon",
-            "Bakelite"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What is the largest living organism currently known to man?",
-        "correct_answer": "Honey Fungus",
-        "incorrect_answers": [
-            "Blue Whale",
-            "Redwood Tree",
-            "The Coral Reef"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "Which of the following are cells of the adaptive immune system?",
-        "correct_answer": "Cytotoxic T cells",
-        "incorrect_answers": [
-            "Dendritic cells",
-            "Natural killer cells",
-            "White blood cells"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What is the Linnean name of the domestic apple tree?",
-        "correct_answer": "Malus pumila",
-        "incorrect_answers": [
-            "Malus americana",
-            "Pomus domestica",
-            "Appelus delectica"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "Who developed the first successful polio vaccine in the 1950s?",
-        "correct_answer": "Jonas Salk",
-        "incorrect_answers": [
-            "John F. Enders",
-            "Thomas Weller",
-            "Frederick Robbins"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "To the nearest minute, how long does it take for light to travel from the Sun to the Earth?",
-        "correct_answer": "8 Minutes",
-        "incorrect_answers": [
-            "6 Minutes",
-            "2 Minutes",
-            "12 Minutes"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What was the first living creature in space?",
-        "correct_answer": "Fruit Flies ",
-        "incorrect_answers": [
-            "Monkey",
-            "Dog",
-            "Mouse"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "What is the molecular formula of Ozone?",
-        "correct_answer": "O3",
-        "incorrect_answers": [
-            "C6H2O6",
-            "N2O",
-            "SO4"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "Where did the Great Storm of 1987 make landfall at, first?",
-        "correct_answer": "Cornwall",
-        "incorrect_answers": [
-            "Surrey",
-            "Wales",
-            "The Midlands"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "Au on the Periodic Table refers to which element?",
-        "correct_answer": "Gold",
-        "incorrect_answers": [
-            "Silver",
-            "Oxygen",
-            "Nickel"
+            "Watt",
+            "Decibel",
+            "Kelvin"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "Science &amp; Nature",
-        "question": "The biggest distinction between a eukaryotic cell and a prokaryotic cell is:",
-        "correct_answer": "The presence or absence of a nucleus",
+        "question": "What is the elemental symbol for mercury?",
+        "correct_answer": "Hg",
         "incorrect_answers": [
-            "The overall size",
-            "The presence or absence of certain organelles",
-            "The mode of reproduction"
+            "Me",
+            "Mc",
+            "Hy"
         ]
     },
     {
         "type": "multiple",
-        "difficulty": "hard",
+        "difficulty": "medium",
         "category": "Science &amp; Nature",
-        "question": "Which of these animals belongs in class Chondrichthyes?",
-        "correct_answer": "Great white shark",
+        "question": "The &quot;Tibia&quot; is found in which part of the body?",
+        "correct_answer": "Leg",
         "incorrect_answers": [
-            "Octopus",
-            "Killer whale",
-            "Catfish"
+            "Arm",
+            "Hand",
+            "Head"
         ]
     },
     {
         "type": "multiple",
-        "difficulty": "hard",
+        "difficulty": "medium",
         "category": "Science &amp; Nature",
-        "question": "Which horizon in a soil profile consists of bedrock?",
-        "correct_answer": "R",
+        "question": "Which color cannot be produced in Roses, even through genetic alteration?",
+        "correct_answer": "Blue",
         "incorrect_answers": [
-            "O",
-            "B",
-            "D"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "What does LASER stand for?",
-        "correct_answer": "Light amplification by stimulated emission of radiation",
-        "incorrect_answers": [
-            "Lite analysing by stereo ecorazer",
-            "Light amplifier by standby energy of radio",
-            "Life antimatter by standing entry of range"
+            "Black",
+            "Orange",
+            "Brown"
         ]
     },
     {
@@ -529,38 +133,374 @@
     },
     {
         "type": "multiple",
-        "difficulty": "hard",
+        "difficulty": "easy",
         "category": "Science &amp; Nature",
-        "question": "What does the scientific name of the Cambrian-Period sea creature Anomalocaris mean?",
-        "correct_answer": "Abnormal Shrimp",
+        "question": " What is the chemical symbol for Helium?",
+        "correct_answer": "He",
         "incorrect_answers": [
-            "Deformed Fish",
-            "Strange Crab",
-            "Anomalous Clam"
+            "H",
+            "Hg",
+            "Hs"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Science &amp; Nature",
-        "question": "What does the yellow diamond on the NFPA 704 fire diamond represent?",
-        "correct_answer": "Reactivity",
+        "question": "Deionized water is water with which of the following removed?",
+        "correct_answer": "Iron",
         "incorrect_answers": [
-            "Health",
-            "Flammability",
-            "Radioactivity"
+            "Oxygen",
+            "Hydrogen",
+            "Uncharged atoms"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "What did Gregory Mendel use to test genetic crossovers?",
+        "correct_answer": "Peas",
+        "incorrect_answers": [
+            "Cats",
+            "Flowers",
+            "Parrots"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "At what temperature does water boil?",
+        "correct_answer": "212&deg;F",
+        "incorrect_answers": [
+            "200&deg;F",
+            "181&deg;F",
+            "178&deg;F"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "What is the powerhouse of the cell?",
+        "correct_answer": "Mitochondria",
+        "incorrect_answers": [
+            "Ribosome",
+            "Redbull",
+            "Nucleus"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Science &amp; Nature",
-        "question": "What is the most potent toxin known?",
-        "correct_answer": "Botulinum toxin",
+        "question": "What is the molecular formula of Glucose?",
+        "correct_answer": "C6H12O6",
         "incorrect_answers": [
-            "Ricin",
-            "Cyanide",
-            "Asbestos"
+            "C2H4O2",
+            "K+",
+            "CH4"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "What is the standard atomic weight of a Plutonium nucleus?",
+        "correct_answer": "244",
+        "incorrect_answers": [
+            "94",
+            "481",
+            "128"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "What do you study if you are studying entomology?",
+        "correct_answer": "Insects",
+        "incorrect_answers": [
+            "Humans",
+            "the Brain",
+            "Fish"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "What are human nails made of?",
+        "correct_answer": "Keratin",
+        "incorrect_answers": [
+            "Bone",
+            "Chitin",
+            "Calcium"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "What is the hottest planet in the solar system",
+        "correct_answer": "Venus",
+        "incorrect_answers": [
+            "Jupiter",
+            "Mercury ",
+            "Mars"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "Which of the following is NOT a passive electrical component?",
+        "correct_answer": "Transistor",
+        "incorrect_answers": [
+            "Resistor",
+            "Capacitor",
+            "Inductor"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "Which moon is the only satellite in our solar system to possess a dense atmosphere?",
+        "correct_answer": "Titan",
+        "incorrect_answers": [
+            "Europa",
+            "Miranda",
+            "Callisto"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "What is the name for the auditory illusion of a note that seems to be rising infinitely?",
+        "correct_answer": "Shepard Tone",
+        "incorrect_answers": [
+            "Glissandro Illusion",
+            "Fransen Effect",
+            "McGurck Effect"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "What is the unit of electrical inductance?",
+        "correct_answer": "Henry",
+        "incorrect_answers": [
+            "Weber",
+            "Coulomb",
+            "Mho"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "Which of the following liquids is least viscous? Assume temperature is 25&deg;C.",
+        "correct_answer": "Acetone",
+        "incorrect_answers": [
+            "Water",
+            "Mercury",
+            "Benzene"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "How long is a light-year?",
+        "correct_answer": "9.461 Trillion Kilometres",
+        "incorrect_answers": [
+            "1 AU",
+            "105.40 Earth-years",
+            "501.2 Million Miles"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "Which is not a type of neuron?",
+        "correct_answer": "Perceptual Neuron",
+        "incorrect_answers": [
+            "Sensory Neuron",
+            "Motor Neuron",
+            "Interneuron"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "What is an example of a bacterial pathogen?",
+        "correct_answer": "Cholera",
+        "incorrect_answers": [
+            "Measles ",
+            "AIDS",
+            "Ringworm"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "The asteroid belt is located between which two planets?",
+        "correct_answer": "Mars and Jupiter",
+        "incorrect_answers": [
+            "Jupiter and Saturn",
+            "Mercury and Venus",
+            "Earth and Mars"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "The Axiom of Preventive Medicine states that people with ___ risk for a disease should be screened and we should treat ___ of those people.",
+        "correct_answer": "low, all",
+        "incorrect_answers": [
+            "low, some",
+            "high, all",
+            "high, some"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "Which of these bones is hardest to break?",
+        "correct_answer": "Femur",
+        "incorrect_answers": [
+            "Cranium",
+            "Humerus",
+            "Tibia"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "How old is the universe?",
+        "correct_answer": "13.8 Billion Years",
+        "incorrect_answers": [
+            "4.5 Billion Years",
+            "7.9 Billion Years",
+            "16.2 Billion Years"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "Along with Oxygen, which element is primarily responsible for the sky appearing blue?",
+        "correct_answer": "Nitrogen",
+        "incorrect_answers": [
+            "Helium",
+            "Carbon",
+            "Hydrogen"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "What medication was once commonly used as rat poison?",
+        "correct_answer": "Coumadin",
+        "incorrect_answers": [
+            "Aspirin",
+            "Eliquis",
+            "Tylenol"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "What element on the periodic table has 92 electrons?",
+        "correct_answer": "Uranium",
+        "incorrect_answers": [
+            "Sulfur",
+            "Hydrogen",
+            "Iron"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "Folic acid is the synthetic form of which vitamin?",
+        "correct_answer": "Vitamin B",
+        "incorrect_answers": [
+            "Vitamin A",
+            "Vitamin C",
+            "Vitamin D"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "How many types of quarks are there in the standard model of physics?",
+        "correct_answer": "6",
+        "incorrect_answers": [
+            "2",
+            "3",
+            "4"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "How many moons does Pluto have?",
+        "correct_answer": "Five",
+        "incorrect_answers": [
+            "Two",
+            "Three",
+            "One"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "What is the standard SI unit for temperature?",
+        "correct_answer": "Kelvin",
+        "incorrect_answers": [
+            "Fahrenheit",
+            "Celsius",
+            "Rankine"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "Which of these elements on the Periodic Table is a Noble Gas?",
+        "correct_answer": "Neon",
+        "incorrect_answers": [
+            "Potassium",
+            "Iodine",
+            "Colbalt"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "Naturally occuring uranium primarily consists of which isotope?",
+        "correct_answer": "238",
+        "incorrect_answers": [
+            "235",
+            "239",
+            "233"
         ]
     },
     {
@@ -577,206 +517,242 @@
     },
     {
         "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "An organism described as &quot;heliotropic&quot; has a tendancy to move towards which of these things?",
-        "correct_answer": "Light",
-        "incorrect_answers": [
-            "Water",
-            "Trees",
-            "Pollen"
-        ]
-    },
-    {
-        "type": "multiple",
         "difficulty": "easy",
         "category": "Science &amp; Nature",
-        "question": "Which type of rock is created by intense heat AND pressure?",
-        "correct_answer": "Metamorphic",
+        "question": "What name is given to all baby marsupials?",
+        "correct_answer": "Joey",
         "incorrect_answers": [
-            "Sedimentary",
-            "Igneous",
-            "Diamond"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Which of the following is not a megadiverse country - one that harbors a high number of the earth&#039;s endemic species?",
-        "correct_answer": "Thailand",
-        "incorrect_answers": [
-            "Peru",
-            "Mexico",
-            "South Africa"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What is the region conjoining Pakistan, India, and China with unknown leadership called?",
-        "correct_answer": "Kashmir",
-        "incorrect_answers": [
-            "Andorra",
-            "Gibraltar",
-            "Quin"
+            "Calf",
+            "Pup",
+            "Cub"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
-        "category": "Geography",
-        "question": "What is the name of the Canadian national anthem?",
-        "correct_answer": "O Canada",
+        "category": "Science &amp; Nature",
+        "question": "What is considered the rarest form of color blindness?",
+        "correct_answer": "Blue",
         "incorrect_answers": [
-            "O Red Maple",
-            "Leaf-Spangled Banner",
-            "March of the Puck Drop"
+            "Red",
+            "Green",
+            "Purple"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
-        "category": "Geography",
-        "question": "How many sovereign states are members of the United Nations?",
-        "correct_answer": "195",
+        "category": "Science &amp; Nature",
+        "question": "What is the name of the Supermassive Black Hole in the centre of the Milky Way?",
+        "correct_answer": "Sagittarius A*",
         "incorrect_answers": [
-            "201",
-            "153",
-            "178"
+            "Messier 87",
+            "Alpha Centauri",
+            "Andromeda"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
-        "category": "Geography",
-        "question": "The towns of Brugelette, Arlon and Ath are located in which country?",
-        "correct_answer": "Belgium",
+        "category": "Science &amp; Nature",
+        "question": "Gannymede is the largest moon of which planet?",
+        "correct_answer": "Jupiter",
         "incorrect_answers": [
-            "Andorra",
-            "France",
-            "Luxembourg"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Which city is the capital of Switzerland?",
-        "correct_answer": "Bern",
-        "incorrect_answers": [
-            "Z&uuml;rich",
-            "Frankfurt",
-            "Wien"
+            "Uranus",
+            "Neptune",
+            "Mars"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
-        "category": "Geography",
-        "question": "The prefix Sino- (As in Sino-American) is used to refer to what nationality?",
-        "correct_answer": "Chinese",
+        "category": "Science &amp; Nature",
+        "question": "Which major extinction event was caused by an asteroid collision and eliminated the majority of non-avian dinosaurs?",
+        "correct_answer": "Cretaceous-Paleogene",
         "incorrect_answers": [
-            "Japanese",
-            "Russian",
-            "Indian"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "How many rivers are in Saudi Arabia?",
-        "correct_answer": "0",
-        "incorrect_answers": [
-            "1",
-            "2",
-            "3"
+            "Triassic&ndash;Jurassic",
+            "Permian&ndash;Triassic",
+            "Ordovician&ndash;Silurian"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
-        "category": "Geography",
-        "question": "What is the world&#039;s smallest country by population?",
-        "correct_answer": "Vatican City",
+        "category": "Science &amp; Nature",
+        "question": "The word &quot;science&quot; stems from the word &quot;scire&quot; meaning what?",
+        "correct_answer": "To know",
         "incorrect_answers": [
-            "Nauru",
-            "Marshall Islands",
-            "Lichtenstein"
+            "To measure",
+            "To live",
+            "To count"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "How many planets are there in the Solar System?",
+        "correct_answer": "8",
+        "incorrect_answers": [
+            "9",
+            "11",
+            "10"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "Geography",
-        "question": "What state is the largest state of the United States of America?",
-        "correct_answer": "Alaska",
+        "question": "What is the official language of Costa Rica?",
+        "correct_answer": "Spanish",
         "incorrect_answers": [
-            "California",
-            "Texas",
-            "Washington"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What is the only country in the world with a flag that doesn&#039;t have four right angles?",
-        "correct_answer": "Nepal",
-        "incorrect_answers": [
-            "Panama",
-            "Angola",
-            "Egypt"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Colchester Overpass, otherwise known as &quot;Bunny Man Bridge&quot;, is located where?",
-        "correct_answer": "Fairfax County, Virginia",
-        "incorrect_answers": [
-            "Medford, Oregon",
-            "Braxton County, Virgina",
-            "Lemon Grove, California"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What is the official language of Bhutan?",
-        "correct_answer": "Dzongkha",
-        "incorrect_answers": [
-            "Ladakhi",
-            "Karen",
-            "Groma"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "What is the most common climbing route for the second highest mountain in the world, K2?",
-        "correct_answer": "Abruzzi Spur",
-        "incorrect_answers": [
-            "Magic Line",
-            "Cesen Route",
-            "Polish Line"
+            "English",
+            "Portuguese",
+            "Creole"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "Geography",
-        "question": "What country is the second largest in the world by area?",
-        "correct_answer": "Canada",
+        "question": "What is the name of the peninsula containing Spain and Portugal?",
+        "correct_answer": "Iberian Peninsula",
         "incorrect_answers": [
-            "Russia",
-            "China",
-            "United States of America"
+            "European Peninsula",
+            "Peloponnesian Peninsula",
+            "Scandinavian Peninsula"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "Which of these African countries list &quot;Spanish&quot; as an official language?",
+        "correct_answer": "Equatorial Guinea",
+        "incorrect_answers": [
+            "Guinea",
+            "Cameroon",
+            "Angola"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "Which of the following language families is the most controversial amongst modern linguists?",
+        "correct_answer": "Altaic",
+        "incorrect_answers": [
+            "Sino-Tibetan",
+            "Dravidian",
+            "Indo-European"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "What is the capital of the US State of New York?",
+        "correct_answer": "Albany",
+        "incorrect_answers": [
+            "Buffalo",
+            "New York",
+            "Rochester"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "Bir Tawil, an uninhabited track of land claimed by no country, is located along the border of which two countries?",
+        "correct_answer": "Egypt and Sudan",
+        "incorrect_answers": [
+            "Israel and Jordan",
+            "Chad and Libya",
+            "Iraq and Saudi Arabia"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "Which Canadian province has Charlottetown as its capital?",
+        "correct_answer": "Prince Edward Island",
+        "incorrect_answers": [
+            "Saskachewan",
+            "Northwest Terrirories",
+            "Ontario"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "Where was the ancient city of Pompeii?",
+        "correct_answer": "Italy",
+        "incorrect_answers": [
+            "East Africa",
+            "South America",
+            "Pompilanus"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "Where is Fort Marlborough located?",
+        "correct_answer": "Bengkulu",
+        "incorrect_answers": [
+            "Singapore",
+            "London",
+            "Dover"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "The Andaman and Nicobar Islands in South East Asia are controlled by which country?",
+        "correct_answer": "India",
+        "incorrect_answers": [
+            "Vietnam",
+            "Thailand",
+            "Indonesia"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "Which country claims ownership of the disputed state Kosovo?",
+        "correct_answer": "Serbia",
+        "incorrect_answers": [
+            "Croatia",
+            "Albania",
+            "Macedonia"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "Which of these countries is not a United Nations member state?",
+        "correct_answer": "Niue",
+        "incorrect_answers": [
+            "Tuvalu",
+            "South Sudan",
+            "Montenegro"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "Which of the following countries banned the use of personal genetic ancestry tests?",
+        "correct_answer": "Germany",
+        "incorrect_answers": [
+            "Austria",
+            "Canada",
+            "Sweden"
         ]
     },
     {
@@ -795,372 +771,204 @@
         "type": "multiple",
         "difficulty": "hard",
         "category": "Geography",
-        "question": "How many stations does the Central Line have on the London Underground?",
-        "correct_answer": "49",
+        "question": "Which is not a country in Africa?",
+        "correct_answer": "Guyana",
         "incorrect_answers": [
-            "51",
-            "43",
-            "47"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "Which country is the home of the largest Japanese population outside of Japan?",
-        "correct_answer": "Brazil",
-        "incorrect_answers": [
-            "China",
-            "Russia",
-            "The United States"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "Which country does Austria not border?",
-        "correct_answer": "France",
-        "incorrect_answers": [
-            "Slovenia",
-            "Switzerland",
-            "Slovakia"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "Where is Fort Marlborough located?",
-        "correct_answer": "Bengkulu",
-        "incorrect_answers": [
-            "Singapore",
-            "London",
-            "Dover"
+            "Senegal",
+            "Liberia",
+            "Somalia"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Geography",
-        "question": "What is the capital of Slovakia?",
-        "correct_answer": "Bratislava",
+        "question": "What is the capital city of Slovenia?",
+        "correct_answer": "Ljubljana",
         "incorrect_answers": [
-            "Sofia",
-            "Ljubljana",
-            "Sarajevo"
+            "Maribor",
+            "Velenje",
+            "Trbovlje"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Geography",
-        "question": "Into which basin does the Jordan River flow into?",
-        "correct_answer": "Dead Sea",
+        "question": "What year is on the flag of the US state Wisconsin?",
+        "correct_answer": "1848",
         "incorrect_answers": [
-            "Aral Sea",
+            "1634",
+            "1783",
+            "1901"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "Which is the largest freshwater lake in the world?",
+        "correct_answer": "Lake Superior ",
+        "incorrect_answers": [
             "Caspian Sea",
-            "Salton Sea"
+            "Lake Michigan",
+            "Lake Huron"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Geography",
-        "question": "How many timezones does Russia have?",
-        "correct_answer": "11",
+        "question": "What is the official national language of Pakistan?",
+        "correct_answer": "Urdu",
         "incorrect_answers": [
-            "6",
-            "24",
-            "16"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Which of the following language families is the most controversial amongst modern linguists?",
-        "correct_answer": "Altaic",
-        "incorrect_answers": [
-            "Sino-Tibetan",
-            "Dravidian",
-            "Indo-European"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What is the highest mountain in the world?",
-        "correct_answer": "Mt. Everest",
-        "incorrect_answers": [
-            "Mount Godwin Austen",
-            "Kangchenjunga",
-            "Annapurna"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "Which area of Eastern Europe is famous for its association with vampires?",
-        "correct_answer": "Transylvania",
-        "incorrect_answers": [
-            "Silesia",
-            "Macedonia",
-            "Slovakia"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What event led to Liechenstein adding a crown to its flag?",
-        "correct_answer": "The 1936 Olympics",
-        "incorrect_answers": [
-            "Coronation of Prince Johann I Joseph in 1805",
-            "Charles VI&#039;s decree in 1719",
-            "Signing of the 1862 Constitution of Liechtenstein"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "The Pyrenees mountains are located on the border of which two countries?",
-        "correct_answer": "France and Spain",
-        "incorrect_answers": [
-            "Italy and Switzerland",
-            "Norway and Sweden",
-            "Russia and Ukraine"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "The Svalbard Archipelago is a dependency of which country?",
-        "correct_answer": "Norway",
-        "incorrect_answers": [
-            "Denmark",
-            "Iceland",
-            "Russia"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Which country ranks first in the number of historically active volcanoes?",
-        "correct_answer": "Indonesia",
-        "incorrect_answers": [
-            "Japan",
-            "USA",
-            "India"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "Which of these is NOT a city in India?",
-        "correct_answer": "Islamabad",
-        "incorrect_answers": [
-            "Hyderabad",
-            "Ahmedabad",
-            "Ghaziabad"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "Which country is the Taedong River in?",
-        "correct_answer": "North Korea",
-        "incorrect_answers": [
-            "South Korea",
-            "Japan",
-            "China"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Lake Titicaca is located between which two nations?",
-        "correct_answer": "Peru and Bolivia",
-        "incorrect_answers": [
-            "Kenya and Uganda",
-            "Mexico and the United States",
-            "India and Bangladesh"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What mountain range lines the border between Spain and France?",
-        "correct_answer": "Pyrenees",
-        "incorrect_answers": [
-            "Alps",
-            "Carpathians",
-            "Urals"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "What is Laos?",
-        "correct_answer": "Country",
-        "incorrect_answers": [
-            "Region",
-            "River",
-            "City"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "Which of these African countries displays a gun on their flag?",
-        "correct_answer": "Mozambique",
-        "incorrect_answers": [
-            "Uganda",
-            "Ethiopia",
-            "Nigeria"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Which is the largest of these 4 islands?",
-        "correct_answer": "Borneo",
-        "incorrect_answers": [
-            "Great Britain",
-            "Cuba",
-            "Madagascar"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "Which ocean borders the west coast of the United States?",
-        "correct_answer": "Pacific",
-        "incorrect_answers": [
-            "Atlantic",
             "Indian",
-            "Arctic"
+            "Punjabi",
+            "Pashto"
         ]
     },
     {
         "type": "multiple",
-        "difficulty": "easy",
+        "difficulty": "hard",
         "category": "Geography",
-        "question": "What is the capital of India?",
-        "correct_answer": "New Delhi",
+        "question": "What is the name of rocky region that spans most of eastern Canada?",
+        "correct_answer": "Canadian Shield",
+        "incorrect_answers": [
+            "Rocky Mountains",
+            "Appalachian Mountains",
+            "Himalayas"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "In the 2016 Global Peace Index poll, out of 163 countries, what was the United States of America ranked?",
+        "correct_answer": "103",
+        "incorrect_answers": [
+            "10",
+            "59",
+            "79"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What city  has the busiest airport in the world?",
+        "correct_answer": "Atlanta, Georgia USA",
+        "incorrect_answers": [
+            "London, England",
+            "Chicago,Illinois ISA",
+            "Tokyo,Japan"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What is the largest lake in the African continent?",
+        "correct_answer": "Lake Victoria",
+        "incorrect_answers": [
+            "Lake Tanganyika",
+            "Lake Malawi",
+            "Lake Turkana"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "Which of the following is not a megadiverse country - one that harbors a high number of the earth&#039;s endemic species?",
+        "correct_answer": "Thailand",
+        "incorrect_answers": [
+            "Peru",
+            "Mexico",
+            "South Africa"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What tiny principality lies between Spain and France?",
+        "correct_answer": "Andorra",
+        "incorrect_answers": [
+            "Liechtenstein",
+            "Monaco",
+            "San Marino"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What city is the Terracotta Army located in?",
+        "correct_answer": "Xi&#039;an",
         "incorrect_answers": [
             "Beijing",
-            "Montreal",
-            "Tithi"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What is the busiest port in Europe?",
-        "correct_answer": "Port of Rotterdam",
-        "incorrect_answers": [
-            "Port of Antwerp",
-            "Port of Hamburg",
-            "Port of Amsterdam"
+            "Shanghai",
+            "Hong Kong"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "Geography",
-        "question": "What is the capital of Scotland?",
-        "correct_answer": "Edinburgh",
+        "question": "What is the capital of Bangladesh?",
+        "correct_answer": "Dhaka",
         "incorrect_answers": [
-            "Glasgow",
-            "Dundee",
-            "London"
+            "Khulna",
+            "London",
+            "Lahore"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Geography",
-        "question": "Which is the only US state located entirely within the Appalachia region?",
-        "correct_answer": "West Virginia",
+        "question": "What island in the Canary Islands was the scene of one of the worst air disasters in history with the collision of two jumbo jets?",
+        "correct_answer": "Tenerife",
         "incorrect_answers": [
-            "Pennsylvania",
-            "Alabama",
-            "Kentucky"
+            "Fuerteventura",
+            "Gran Canaria",
+            "Maui"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "Geography",
-        "question": "Which Borough is the farthest in the north of New York City?",
-        "correct_answer": "Bronx",
+        "question": "Which European city is known as the &quot;City of Light&quot;?",
+        "correct_answer": "Paris",
         "incorrect_answers": [
-            "Queens",
-            "Brooklyn",
-            "Manhattan"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "How many time zones are in Russia?",
-        "correct_answer": "11",
-        "incorrect_answers": [
-            "8",
-            "5",
-            "2"
+            "Rome",
+            "London",
+            "Madrid"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "Geography",
-        "question": "Which of the following Japanese islands is the biggest?",
-        "correct_answer": "Honshu",
+        "question": "What is Russia&#039;s second-largest city?",
+        "correct_answer": "Saint Petersburg",
         "incorrect_answers": [
-            "Hokkaido",
-            "Shikoku",
-            "Kyushu"
+            "Minsk",
+            "Nizhny Novgorod",
+            "Vladivostok"
         ]
     },
     {
         "type": "multiple",
-        "difficulty": "medium",
+        "difficulty": "easy",
         "category": "Geography",
-        "question": "Which stretch of water connects the Atlantic Ocean to the Mediterranean Sea?",
-        "correct_answer": "Strait of Gibraltar",
+        "question": "All of the following are classified as Finno-Ugric languages EXCEPT:",
+        "correct_answer": "Samoyedic",
         "incorrect_answers": [
-            "Gibraltar Way",
-            "Spanish Straits",
-            "Channelle de Tangiers"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Which Oceanian nation is known in Māori as Aotearoa?",
-        "correct_answer": "New Zealand",
-        "incorrect_answers": [
-            "Australia",
-            "Solomon Islands",
-            "New Caledonia"
+            "Hungarian",
+            "Finnish",
+            "Estonian"
         ]
     },
     {
@@ -1177,26 +985,218 @@
     },
     {
         "type": "multiple",
-        "difficulty": "medium",
+        "difficulty": "hard",
         "category": "Geography",
-        "question": "Which islands below have been claimed by both Japan and Russia?",
-        "correct_answer": "Kuril Islands",
+        "question": "In what part of Wales will you find the village Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch?",
+        "correct_answer": "Anglesey",
         "incorrect_answers": [
-            "Paracel Islands",
-            "Chagos Islands",
-            "Spratly Islands"
+            "Pembrokeshire",
+            "Wrexham",
+            "Bridgend"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Geography",
-        "question": "What is the capital of Brazil?",
-        "correct_answer": "Brasilia",
+        "question": "What is the fifth largest country by area?",
+        "correct_answer": "Brazil",
         "incorrect_answers": [
-            "Rio de Janeiro",
-            "Sao Paolo",
-            "Curitiba"
+            "United States",
+            "Australia",
+            "India"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "How many countries does the United States share a land border with?",
+        "correct_answer": "2",
+        "incorrect_answers": [
+            "1",
+            "3",
+            "4"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "Which ocean borders the west coast of the United States?",
+        "correct_answer": "Pacific",
+        "incorrect_answers": [
+            "Atlantic",
+            "Indian",
+            "Arctic"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "What is the area of Vatican City?",
+        "correct_answer": "0.44km^2",
+        "incorrect_answers": [
+            "0.10km^2",
+            "0.86km^2",
+            "12.00km^2"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "In which Indian city can the Taj Mahal be found?",
+        "correct_answer": "Agra",
+        "incorrect_answers": [
+            "Mumbai",
+            "Faridabad",
+            "Thane"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "What is the largest city and commercial capital of Sri Lanka?",
+        "correct_answer": "Colombo",
+        "incorrect_answers": [
+            "Moratuwa",
+            "Negombo",
+            "Kandy"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "Which of these Mediterranian islands is under the sovereign rule of France?",
+        "correct_answer": "Corsica",
+        "incorrect_answers": [
+            "Majorca",
+            "Sardinia",
+            "Malta"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "Which of these island countries is located in the Caribbean?",
+        "correct_answer": "Barbados",
+        "incorrect_answers": [
+            "Fiji",
+            "Maldives",
+            "Seychelles"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What is the capital of Vietnam?",
+        "correct_answer": "Hanoi",
+        "incorrect_answers": [
+            "Da Nang",
+            "Hai Phong",
+            "Ho Chi Minh City"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What is the capital city of the U.S. state of Texas?",
+        "correct_answer": "Austin",
+        "incorrect_answers": [
+            "Dallas",
+            "Houston",
+            "San Antonio"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "What is the name of one of the Neo-Aramaic languages spoken by the Jewish population from Northwestern Iraq?",
+        "correct_answer": "Lishana Deni",
+        "incorrect_answers": [
+            "Hulaul&aacute;",
+            "Lishan Didan",
+            "Chaldean Neo-Aramaic"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "Greenland is a part of which kingdom?",
+        "correct_answer": "Denmark",
+        "incorrect_answers": [
+            "Sweden",
+            "Norway",
+            "United Kingdom"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "Which of these countries is not written in its native language?",
+        "correct_answer": "Slova&scaron;ko",
+        "incorrect_answers": [
+            "Suomi",
+            "Schweiz",
+            "Ell&aacute;da"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "What is the world&#039;s smallest country by population?",
+        "correct_answer": "Vatican City",
+        "incorrect_answers": [
+            "Nauru",
+            "Marshall Islands",
+            "Lichtenstein"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "On which continent does the Andes mountain range lie?",
+        "correct_answer": "South America",
+        "incorrect_answers": [
+            "Europe",
+            "Asia",
+            "Africa"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "How many states are in Australia?",
+        "correct_answer": "6",
+        "incorrect_answers": [
+            "7",
+            "8",
+            "5"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "Which country is completely landlocked by South Africa?",
+        "correct_answer": "Lesotho",
+        "incorrect_answers": [
+            "Swaziland",
+            "Botswana",
+            "Zimbabwe"
         ]
     }
 ]
