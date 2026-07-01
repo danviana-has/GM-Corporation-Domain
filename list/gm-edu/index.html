@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM EDU - Plataforma de Aprendizado</title>
+    <style>
+        /* --- Reset e Variáveis de Estilo Moderno --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --card-border: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+            --success-color: #2ea44f;
+            --danger-color: #f85149;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .edu-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- Cabeçalho --- */
+        header {
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .btn-back {
+            background: transparent;
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .btn-back:hover {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+        }
+
+        /* --- Tela de Seleção (Matérias e Capítulos) --- */
+        .grid-subjects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .subject-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .subject-card:hover {
+            border-color: var(--accent-color);
+            background: rgba(88, 166, 255, 0.02);
+            transform: translateY(-2px);
+        }
+
+        .subject-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .chapter-list {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .chapter-btn {
+            background: var(--bg-color);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 4px;
+            text-align: left;
+            font-size: 0.85rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .chapter-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* --- Tela do Quiz/Perguntas --- */
+        .quiz-area {
+            display: none;
+        }
+
+        .question-box {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .option-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 14px 20px;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: var(--accent-color);
+            background: rgba(88, 166, 255, 0.02);
+        }
+
+        .option-btn.correct {
+            background-color: rgba(46, 164, 79, 0.15) !important;
+            border-color: var(--success-color) !important;
+            color: #48c774;
+        }
+
+        .option-btn.wrong {
+            background-color: rgba(248, 81, 73, 0.15) !important;
+            border-color: var(--danger-color) !important;
+            color: #ff6b6b;
+        }
+
+        /* --- Feedback de Carregamento e Telas Finais --- */
+        .status-msg {
+            text-align: center;
+            color: var(--text-secondary);
+            font-style: italic;
+            padding: 30px;
+        }
+
+        .score-board {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .score-board h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="edu-container">
+        <header>
+            <h1 id="appTitle">GM EDU</h1>
+            <button class="btn-back" id="backBtn" style="display: none;" onclick="showSelectionScreen()">← Mudar de Matéria</button>
+        </header>
+
+        <!-- TELA 1: SELEÇÃO DE MATÉRIAS E CAPÍTULOS -->
+        <div id="selectionScreen">
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">Escolha uma matéria e selecione o capítulo para iniciar os estudos estruturados:</p>
+            <div class="grid-subjects">
+                
+                <!-- Computação -->
+                <div class="subject-card">
+                    <h3>🖥️ Computação</h3>
+                    <div class="chapter-list">
+                        <button class="chapter-btn" onclick="startQuiz(18, 'easy', 'Capítulo 1: Fundamentos Básicos')">Cap. 1: Fundamentos Básicos</button>
+                        <button class="chapter-btn" onclick="startQuiz(18, 'medium', 'Capítulo 2: Algoritmos e Redes')">Cap. 2: Algoritmos e Redes</button>
+                    </div>
+                </div>
+
+                <!-- Ciências e Natureza -->
+                <div class="subject-card">
+                    <h3>🔬 Ciências</h3>
+                    <div class="chapter-list">
+                        <button class="chapter-btn" onclick="startQuiz(17, 'easy', 'Capítulo 1: Biologia Básica')">Cap. 1: Biologia Básica</button>
+                        <button class="chapter-btn" onclick="startQuiz(17, 'medium', 'Capítulo 2: Física & Química')">Cap. 2: Física & Química</button>
+                    </div>
+                </div>
+
+                <!-- Matemática -->
+                <div class="subject-card">
+                    <h3>📐 Matemática</h3>
+                    <div class="chapter-list">
+                        <button class="chapter-btn" onclick="startQuiz(19, 'medium', 'Capítulo 1: Lógica e Álgebra')">Cap. 1: Lógica e Álgebra</button>
+                    </div>
+                </div>
+
+                <!-- Geografia -->
+                <div class="subject-card">
+                    <h3>🌍 Geografia</h3>
+                    <div class="chapter-list">
+                        <button class="chapter-btn" onclick="startQuiz(22, 'easy', 'Capítulo 1: Continentes e Países')">Cap. 1: Continentes e Países</button>
+                        <button class="chapter-btn" onclick="startQuiz(22, 'medium', 'Capítulo 2: Geopolítica Global')">Cap. 2: Geopolítica Global</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TELA 2: ÁREA DO SIMULADO/QUIZ -->
+        <div id="quizScreen" class="quiz-area">
+            <div id="quizLoading" class="status-msg">Baixando dados do OpenTDB Database...</div>
+            <div id="quizBody" style="display: none;">
+                <div class="question-box" id="questionText">Carregando pergunta...</div>
+                <div class="options-list" id="optionsContainer"></div>
+                <div id="questionFeedback" style="font-size: 0.9rem; font-weight: 500; text-align: center;"></div>
+            </div>
+        </div>
+
+        <!-- TELA 3: RESULTADO FINAL -->
+        <div id="resultScreen" class="quiz-area score-board">
+            <h2>Capítulo Concluído!</h2>
+            <p id="scoreText" style="font-size: 1.2rem; margin-bottom: 20px;"></p>
+            <button class="option-btn" style="text-align: center; max-width: 200px; margin: 0 auto;" onclick="showSelectionScreen()">Voltar ao Início</button>
+        </div>
+
+    </div>
+
+    <script>
+        let questions = [];
+        let currentQuestionIdx = 0;
+        let score = 0;
+
+        const selectionScreen = document.getElementById('selectionScreen');
+        const quizScreen = document.getElementById('quizScreen');
+        const resultScreen = document.getElementById('resultScreen');
+        const quizLoading = document.getElementById('quizLoading');
+        const quizBody = document.getElementById('quizBody');
+        const backBtn = document.getElementById('backBtn');
+        const appTitle = document.getElementById('appTitle');
+
+        // Busca dados dinamicamente do OpenTDB de acordo com a Matéria e Dificuldade (Capítulo)
+        async function startQuiz(categoryId, difficulty, chapterTitle) {
+            selectionScreen.style.display = 'none';
+            resultScreen.style.display = 'none';
+            quizScreen.style.display = 'block';
+            quizLoading.style.display = 'block';
+            quizBody.style.display = 'none';
+            backBtn.style.display = 'block';
+            appTitle.innerText = chapterTitle;
+
+            questions = [];
+            currentQuestionIdx = 0;
+            score = 0;
+
+            const url = `https://opentdb.com/api.php?amount=5&category=${categoryId}&difficulty=${difficulty}&type=multiple`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.response_code === 0) {
+                    questions = data.results;
+                    quizLoading.style.display = 'none';
+                    quizBody.style.display = 'block';
+                    showQuestion();
+                } else {
+                    quizLoading.innerText = "Erro ao buscar questões. Tente selecionar o capítulo novamente.";
+                }
+            } catch (error) {
+                quizLoading.innerText = "Erro de conexão com o banco do OpenTDB.";
+            }
+        }
+
+        function showQuestion() {
+            document.getElementById('questionFeedback').innerText = "";
+            const currentQuestion = questions[currentQuestionIdx];
+            
+            // Decodifica entidades HTML que vêm da API do OpenTDB (ex: &quot;)
+            document.getElementById('questionText').innerHTML = `Questão ${currentQuestionIdx + 1} de 5:<br><br>${currentQuestion.question}`;
+
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+
+            // Junta a resposta certa com as erradas e embaralha
+            const options = [...currentQuestion.incorrect_answers];
+            const correctOption = currentQuestion.correct_answer;
+            const insertIdx = Math.floor(Math.random() * (options.length + 1));
+            options.splice(insertIdx, 0, correctOption);
+
+            options.forEach(option => {
+                const button = document.createElement('button');
+                button.className = 'option-btn';
+                button.innerHTML = option;
+                button.onclick = () => checkAnswer(button, option, correctOption);
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedButton, selectedOption, correctOption) {
+            const buttons = document.querySelectorAll('#optionsContainer .option-btn');
+            buttons.forEach(btn => btn.disabled = true); // Bloqueia cliques extras
+
+            if (selectedOption === correctOption) {
+                selectedButton.classList.add('correct');
+                score++;
+            } else {
+                selectedButton.classList.add('wrong');
+                // Mostra qual era a alternativa correta
+                buttons.forEach(btn => {
+                    if (btn.innerHTML === correctOption) btn.classList.add('correct');
+                });
+            }
+
+            // Aguarda 2 segundos para o usuário analisar a resposta e passa para a próxima
+            setTimeout(() => {
+                currentQuestionIdx++;
+                if (currentQuestionIdx < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            }, 2000);
+        }
+
+        function showResults() {
+            quizScreen.style.display = 'none';
+            resultScreen.style.display = 'block';
+            document.getElementById('scoreText').innerText = `Você acertou ${score} de 5 questões!`;
+        }
+
+        function showSelectionScreen() {
+            selectionScreen.style.display = 'block';
+            quizScreen.style.display = 'none';
+            resultScreen.style.display = 'none';
+            backBtn.style.display = 'none';
+            appTitle.innerText = "GM EDU";
+        }
+    </script>
+</body>
+</html>
