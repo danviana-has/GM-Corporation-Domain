@@ -2,35 +2,53 @@ name: Executar GM Search Crawler
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Roda automaticamente todo dia à meia-noite
-  workflow_dispatch: # Permite que você ative o robô manualmente clicando em um botão no GitHub
+    - cron: '0 0 * * *' # Executa automaticamente todos os dias à meia-noite
+  workflow_dispatch: # Mantém o botão ativo na aba Actions para você rodar manualmente quando quiser
 
 jobs:
   build-and-crawl:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Dá permissão para salvar o cache json no repositório
+      contents: write # Permissão obrigatória para salvar o cache json de volta no repositório
 
     steps:
-    - name: Baixar o código do repositório
+    - name: Baixar o codigo do repositorio
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Baixa o histórico completo para evitar erros de sincronização (rebase)
 
     - name: Configurar o Python no servidor
       uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
-    - name: Instalar dependências do robô
+    - name: Instalar dependencias do robo
       run: |
         pip install requests beautifulsoup4
 
-    - name: Executar o Robô Crawler e Indexador
+    - name: Executar o Robo Crawler e Indexador
       run: |
         python "list/GM Search/crawler.py"
 
-    - name: Salvar o cache atualizado no repositório e publicar
+    - name: Salvar Cache e Forçar Sincronizacao
       run: |
-        git config --global user.name 'GM Search Bot'
+        git config --global user.name 'GM Backend Bot'
         git config --global user.email 'bot@gmcorporation.com.br'
+        
+        # Garante que estamos acompanhando a branch principal de forma limpa
+        git checkout main
+        
         git add "list/GM Search/index_cache.json"
-        git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 [Bot] Cache do indexador atualizado em tempo real" && git push)
+        
+        # Só tenta commitar e enviar se houver modificações reais no cache
+        if ! git diff --quiet --cached; then
+          git commit -m "⚙️ [GM OS] Banco de dados e domínios sincronizados via Actions"
+          
+          # Baixa as alterações remotas recentes e aplica o commit do bot por cima, evitando rejeição
+          git pull --rebase origin main
+          
+          # Envia os dados atualizados para o repositório
+          git push origin main
+        else
+          echo "Nenhuma alteração detectada no cache. Pulando o push."
+        fi
