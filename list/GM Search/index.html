@@ -211,8 +211,6 @@
         status.innerText = "🤖 Vasculhando bilhões de páginas em tempo real...";
         container.innerHTML = '<p class="status">Buscando...</p>';
 
-        // Para rodar direto do GitHub Pages sem API Key e sem limites de servidores centrais,
-        // o motor consome a API livre do DuckDuckGo de sugestão enriquecida e respostas em formato aberto.
         const urlFinal = `https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json&pretty=1&no_html=1&skip_disambig=1`;
 
         fetch(urlFinal)
@@ -220,28 +218,28 @@
             .then(data => {
                 resultadosSalvos = [];
                 
-                // 1. Extrai o tópico principal (Instant Answer) caso exista
-                if (data.AbstractText) {
+                // 1. Extrai o tópico principal APENAS se a URL for externa (não for do próprio DuckDuckGo)
+                if (data.AbstractText && data.AbstractURL && !data.AbstractURL.includes('duckduckgo.com')) {
                     resultadosSalvos.push({
                         titulo: data.Heading || query,
-                        url: data.AbstractURL,
+                        url: data.AbstractURL, // URL DIRETA DO SITE
                         conteudo: data.AbstractText,
                         imagem: data.Image
                     });
                 }
 
-                // 2. Transmuta os tópicos relacionados do índice aberto no formato do GM Search
+                // 2. Transmuta os tópicos de links diretos da Web
                 if (data.RelatedTopics && data.RelatedTopics.length > 0) {
                     data.RelatedTopics.forEach(item => {
-                        if (item.FirstURL && item.Text) {
-                            // Limpa o texto separando o título da descrição do link
+                        // Garante que o item tem um link válido e que NÃO envia para o DuckDuckGo
+                        if (item.FirstURL && item.Text && !item.FirstURL.includes('duckduckgo.com')) {
                             const partes = item.Text.split(' - ');
                             const titulo = partes[0] || 'Resultado da Web';
                             const resumo = partes[1] || item.Text;
 
                             resultadosSalvos.push({
                                 titulo: titulo,
-                                url: item.FirstURL,
+                                url: item.FirstURL, // URL DIRETA DO SITE PESQUISADO
                                 conteudo: resumo,
                                 imagem: item.Icon ? item.Icon.URL : ''
                             });
@@ -249,7 +247,7 @@
                     });
                 }
 
-                status.innerText = `Busca concluída sob demanda! Encontrados ${resultadosSalvos.length} blocos principais indexados.`;
+                status.innerText = `Busca concluída! Encontrados ${resultadosSalvos.length} sites diretos na malha global.`;
                 renderizar();
             })
             .catch(err => {
@@ -264,7 +262,7 @@
         container.innerHTML = '';
 
         if (resultadosSalvos.length === 0) {
-            container.innerHTML = '<p class="status">Nenhum resultado na memória. Digite um termo acima.</p>';
+            container.innerHTML = '<p class="status">Nenhum resultado direto para este termo. Tente outra palavra-chave.</p>';
             return;
         }
 
@@ -273,7 +271,7 @@
                 const card = document.createElement('div');
                 card.className = 'site-card';
                 card.innerHTML = `
-                    <a href="${p.url}" target="_blank">${p.titulo}</a>
+                    <a href="${p.url}" target="_blank" rel="noopener noreferrer">${p.titulo}</a>
                     <div class="url">${p.url}</div>
                     <div class="snippet">${p.conteudo}</div>
                 `;
@@ -283,14 +281,13 @@
             const grid = document.createElement('div');
             grid.className = 'image-grid';
             
-            // Mapeia os metadados de imagem coletados na estrutura tradicional
             resultadosSalvos.forEach(img => {
                 if (img.imagem) {
                     const urlCompletaImg = img.imagem.startsWith('http') ? img.imagem : `https://duckduckgo.com${img.imagem}`;
                     const card = document.createElement('div');
                     card.className = 'image-card';
                     card.innerHTML = `
-                        <a href="${img.url}" target="_blank">
+                        <a href="${img.url}" target="_blank" rel="noopener noreferrer">
                             <img src="${urlCompletaImg}" alt="${img.titulo}" onerror="this.parentNode.parentNode.style.display='none'">
                         </a>
                         <div style="padding:10px; font-size:0.85rem; color:var(--text-muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${img.titulo}</div>
@@ -300,7 +297,7 @@
             });
 
             if (grid.children.length === 0) {
-                container.innerHTML = '<p class="status">Nenhuma imagem direta disponível para este termo no índice rápido.</p>';
+                container.innerHTML = '<p class="status">Nenhuma imagem direta disponível para este termo.</p>';
             } else {
                 container.appendChild(grid);
             }
