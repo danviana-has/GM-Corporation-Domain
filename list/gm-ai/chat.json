@@ -1,5 +1,12 @@
 {
     "messages": [
-        { "role": "user", "content": "Olá Qwen, crie uma função simples em JavaScript" }
+        {
+            "role": "user",
+            "content": "Olá Qwen, crie uma função simples em JavaScript"
+        },
+        {
+            "role": "assistant",
+            "content": "Claro! Aqui está um exemplo básico de uma função em JavaScript:\n\n```javascript\nfunction saudar() {\n  console.log(\"Olá!\");\n}\n\nsaudar();\n```\n\nEste código define uma função chamada `saudar` que imprime \"Olá!\" no consol\u001b[6D\u001b[K\nconsole quando é chamada. Depois disso, a função é chamada usando o nome `s\u001b[2D\u001b[K\n`saudar`."
+        }
     ]
 }
