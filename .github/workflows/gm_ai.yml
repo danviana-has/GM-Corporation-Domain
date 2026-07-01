@@ -5,9 +5,14 @@ on:
     paths:
       - 'list/gm-ai/chat.json'
 
+# --- ESSE BLOCO DAQUI DA CORREÇÃO DESTRICA O ERRO 403 ---
+permissions:
+  contents: write
+# --------------------------------------------------------
+
 jobs:
   inference:
-    runs-on: ubuntu-latest
+    runs-runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
@@ -19,11 +24,8 @@ jobs:
 
     - name: Start Ollama & Pull Qwen Coder
       run: |
-        # Inicia o Ollama em background
         ollama serve &
-        # Aguarda o serviço subir totalmente
         sleep 5
-        # Baixa o modelo Qwen Coder focado em performance leve
         ollama pull qwen2.5-coder:1.5b
 
     - name: Run Inference
@@ -43,7 +45,6 @@ jobs:
             prompt = last_message['content']
             print(f"Processando prompt na nuvem: {prompt}")
             
-            # Executa o modelo localmente dentro da Action do GitHub
             result = subprocess.run(
                 ['ollama', 'run', 'qwen2.5-coder:1.5b', prompt],
                 capture_output=True,
@@ -53,7 +54,6 @@ jobs:
             
             ai_text = result.stdout.strip() if result.returncode == 0 else "Erro interno no processamento do modelo."
             
-            # Injeta a resposta no histórico do chat
             data['messages'].append({"role": "assistant", "content": ai_text})
             
             with open(chat_path, 'w', encoding='utf-8') as f:
