@@ -20,30 +20,30 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Baixar e Executar o Motor Pronto SearXNG (Docker)
+    - name: Executar o Motor Pronto SearXNG
       run: |
-        # Inicia a imagem oficial e pronta do motor SearXNG em segundo plano
-        docker run -d -d -p 8080:8080 --name motor_searxng \
-          -e SEARXNG_SETTINGS="{'search': {'formats': ['json']}}" \
-          searxng/searxng:latest
+        # Sobe o contêiner do motor original de forma limpa e sem chaves
+        docker run -d -p 8080:8080 --name motor_searxng searxng/searxng:latest
         
-        # Aguarda 5 segundos para o motor carregar completamente na memória
-        sleep 5
+        # Tempo para o servidor do motor iniciar as conexões
+        sleep 12
 
-    - name: Consultar o Motor SearXNG via Terminal
+    - name: Consultar o Motor SearXNG
       run: |
-        # Transforma o termo digitado em texto seguro para URL
+        # Codifica o termo de busca de forma direta
         QUERY=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${{ github.event.inputs.termo }}'))")
         
-        # Faz a requisição direta para o motor SearXNG rodando no servidor
-        # Ele busca tanto os sites (general) quanto as imagens
+        # Faz a consulta direta no formato padrão do motor e salva o arquivo de texto
         curl -s "http://localhost:8080/search?q=${QUERY}&format=json" > bruto.json
 
-    - name: Indexar e Formatar Resultados para o GM Search
+    - name: Formatar Resultados para o GM Search
       run: |
-        # Script em linha para organizar o retorno do SearXNG no formato do seu index.html
         python3 -c "
-        import json, os
+        import json, os, sys
+        
+        if not os.path.exists('bruto.json') or os.path.getsize('bruto.json') == 0:
+            sys.exit(1)
+            
         with open('bruto.json', 'r', encoding='utf-8') as f:
             dados = json.load(f)
         
@@ -53,10 +53,9 @@ jobs:
             'imagens': []
         }
         
-        # Filtra os sites retornados pelo motor
-        for item in dados.get('results', [])[:15]:
+        for item in dados.get('results', []):
             if 'url' in item and 'title' in item:
-                if item.get('category') == 'images' or 'img_src' in item:
+                if 'img_src' in item or 'thumbnail' in item or item.get('category') == 'images':
                     banco_cache['imagens'].append({
                         'url_imagem': item.get('img_src') or item.get('thumbnail'),
                         'url_origem': item.get('url'),
@@ -66,15 +65,14 @@ jobs:
                     banco_cache['paginas'].append({
                         'titulo': item.get('title'),
                         'url': item.get('url'),
-                        'conteudo': item.get('content', 'Sem resumo disponível.')
+                        'conteudo': item.get('content', '')
                     })
                     
-        caminho = 'list/GM Search/index_cache.json'
-        with open(caminho, 'w', encoding='utf-8') as f:
+        with open('list/GM Search/index_cache.json', 'w', encoding='utf-8') as f:
             json.dump(banco_cache, f, ensure_ascii=False, indent=2)
         "
 
-    - name: Publicar Resultados Atualizados no Pages
+    - name: Publicar Resultados no Pages
       run: |
         git config --global user.name 'GM Backend Bot'
         git config --global user.email 'bot@gmcorporation.com.br'
@@ -82,9 +80,7 @@ jobs:
         git add "list/GM Search/index_cache.json"
         
         if ! git diff --quiet --cached; then
-          git commit -m "⚙️ [GM Search] Resultados do SearXNG para '${{ github.event.inputs.termo }}' sincronizados"
+          git commit -m "⚙️ [GM Search] Resultados do SearXNG sincronizados"
           git pull --rebase origin main
           git push origin main
-        else
-          echo "Nenhum resultado novo detectado."
         fi
