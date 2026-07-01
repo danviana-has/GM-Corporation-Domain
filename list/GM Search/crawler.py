@@ -2,7 +2,8 @@ import sys
 import os
 import json
 import time
-from duckduckgo_search import DDGS
+# Alterado para o novo padrão de importação do pacote 'ddgs'
+from ddgs import DDGS
 
 def rodar_motor_ddg(termo_busca):
     if not termo_busca:
@@ -65,7 +66,7 @@ def rodar_motor_ddg(termo_busca):
     with open(caminho_salvamento, 'w', encoding='utf-8') as f:
         json.dump(banco_cache, f, ensure_ascii=False, indent=2)
         
-    print(f"💾 Banco de dados atualizado com sucesso em: {caminho_salvamento}")
+    print(f"💾 Banco de dados updated com sucesso em: {caminho_salvamento}")
 
 if __name__ == "__main__":
     termo = sys.argv[1] if len(sys.argv) > 1 else "Tecnologia"
