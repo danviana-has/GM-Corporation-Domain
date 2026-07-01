@@ -1,26 +1,86 @@
 [
     {
         "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "Down Syndrome is usually caused by an extra copy of which chromosome?",
+        "correct_answer": "21",
+        "incorrect_answers": [
+            "23",
+            "15",
+            "24"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "Which Swiss psychologist is synonymous with the concepts of introvert and extrovert personalities?",
+        "correct_answer": "Carl Jung",
+        "incorrect_answers": [
+            "Jean Piaget",
+            "Alice Miller",
+            "Hermann Rorschach"
+        ]
+    },
+    {
+        "type": "multiple",
         "difficulty": "easy",
         "category": "Science &amp; Nature",
-        "question": "Naturally occuring uranium primarily consists of which isotope?",
-        "correct_answer": "238",
+        "question": "What is the official name of the star located closest to the North Celestial Pole?",
+        "correct_answer": "Polaris",
         "incorrect_answers": [
-            "235",
-            "239",
-            "233"
+            "Eridanus",
+            "Gamma Cephei",
+            "Iota Cephei"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "Which of the following is NOT a passive electrical component?",
+        "correct_answer": "Transistor",
+        "incorrect_answers": [
+            "Resistor",
+            "Capacitor",
+            "Inductor"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Science &amp; Nature",
-        "question": "Muscle fiber is constructed of bundles small long organelles called what?",
-        "correct_answer": "Myofibrils",
+        "question": "How many objects are equivalent to one mole?",
+        "correct_answer": "6.022 x 10^23",
         "incorrect_answers": [
-            "Epimysium",
-            "Myofiaments",
-            "Myocardium"
+            "6.002 x 10^22",
+            "6.022 x 10^22",
+            "6.002 x 10^23"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "What is the unit of electrical capacitance?",
+        "correct_answer": "Farad",
+        "incorrect_answers": [
+            "Gauss",
+            "Henry",
+            "Watt"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "Which part of the body does glaucoma affect?",
+        "correct_answer": "Eyes",
+        "incorrect_answers": [
+            "Throat",
+            "Stomach",
+            "Blood"
         ]
     },
     {
@@ -37,434 +97,26 @@
     },
     {
         "type": "multiple",
-        "difficulty": "hard",
+        "difficulty": "medium",
         "category": "Science &amp; Nature",
-        "question": "Which constellation contains the center of the Milky Way?",
-        "correct_answer": "Sagittarius",
+        "question": "The medial meniscus forms which part of what joint in the human body?",
+        "correct_answer": "Knee",
         "incorrect_answers": [
-            "Scorpius",
-            "Ophiuchus",
-            "Capricornus"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "How many planets are there in the Solar System?",
-        "correct_answer": "8",
-        "incorrect_answers": [
-            "9",
-            "11",
-            "10"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "Where in the human body is the Pineal Gland located?",
-        "correct_answer": "Brain",
-        "incorrect_answers": [
-            "Groin",
-            "Chest",
-            "Throat"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "The medical term for the belly button is which of the following?",
-        "correct_answer": "Umbilicus",
-        "incorrect_answers": [
-            "Nevus",
-            "Nares",
-            "Paxillus"
+            "Elbow",
+            "Ankle",
+            "Shoulder"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Science &amp; Nature",
-        "question": "Tetsuya Fujita was a scientist that developed the scale for which natural disaster?",
-        "correct_answer": "Tornadoes",
+        "question": "After which Danish city is the 72th element on the periodic table named?",
+        "correct_answer": "Copenhagen",
         "incorrect_answers": [
-            "Hurricanes",
-            "Earthquakes",
-            "Volcanoes"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "At what depth should you make a decompression stop, or safety stop, on a typical scuba dive?",
-        "correct_answer": "15 Feet / 5 Meters",
-        "incorrect_answers": [
-            "25 Feet / 7.5 Meters",
-            "50 Feet / 15 Meters",
-            "75 Feet / 23 Meters"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What is the atomic number of Uranium ",
-        "correct_answer": "92",
-        "incorrect_answers": [
-            "235",
-            "17",
-            "167"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "A positron is an antiparticle of a what?",
-        "correct_answer": "Electron",
-        "incorrect_answers": [
-            "Neutron",
-            "Proton",
-            "Photon"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "Which of these is a stop codon in DNA?",
-        "correct_answer": "TAA",
-        "incorrect_answers": [
-            "ACT",
-            "ACA",
-            "GTA"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What is the study of the cells and tissues of plants and animals?",
-        "correct_answer": "Histology",
-        "incorrect_answers": [
-            "Microbiology",
-            "Anatomy",
-            "Biochemistry"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What cell organelle is known as &quot;the powerhouse of the cell?&quot;",
-        "correct_answer": "Mitochondria",
-        "incorrect_answers": [
-            "Nucleus",
-            "Golgi apparatus",
-            "Endoplasmic reticulum"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "Which Landsat Satellite currently has had the longest operational life?",
-        "correct_answer": "Landsat 5",
-        "incorrect_answers": [
-            "Landsat 8",
-            "Landsat 7",
-            "Landsat 6"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "Myopia is the scientific term for which condition?",
-        "correct_answer": "Shortsightedness",
-        "incorrect_answers": [
-            "Farsightedness",
-            "Double Vision",
-            "Clouded Vision"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "Which of the following bones is not in the leg?",
-        "correct_answer": "Radius",
-        "incorrect_answers": [
-            "Patella",
-            "Tibia",
-            "Fibula "
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What part of the brain takes its name from the Greek for seahorse?",
-        "correct_answer": "Hippocampus",
-        "incorrect_answers": [
-            "Cerebellum",
-            "Thalamus",
-            "Amygdala"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "All of the following human genetic haplogroup names are shared between Y-chromosome and mitochondrial DNA haplogroups EXCEPT:",
-        "correct_answer": "Haplogroup U",
-        "incorrect_answers": [
-            "Haplogroup L",
-            "Haplogroup T",
-            "Haplogroup J"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "What did Gregory Mendel use to test genetic crossovers?",
-        "correct_answer": "Peas",
-        "incorrect_answers": [
-            "Cats",
-            "Flowers",
-            "Parrots"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "How many moons does the Earth have?",
-        "correct_answer": "1",
-        "incorrect_answers": [
-            "0",
-            "2",
-            "3"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "Deionized water is water with which of the following removed?",
-        "correct_answer": "Iron",
-        "incorrect_answers": [
-            "Oxygen",
-            "Hydrogen",
-            "Uncharged atoms"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "What does DNA stand for?",
-        "correct_answer": "Deoxyribonucleic Acid",
-        "incorrect_answers": [
-            "Deoxyribogenetic Acid",
-            "Deoxyribogenetic Atoms",
-            "Detoxic Acid"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "What lies at the center of our galaxy?",
-        "correct_answer": "A black hole",
-        "incorrect_answers": [
-            "A wormhole",
-            "A supernova",
-            "A quasar"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What is the scientific term for &#039;taste&#039;?",
-        "correct_answer": "Gustatory Perception",
-        "incorrect_answers": [
-            "Olfaction",
-            "Somatosensation",
-            "Auditory Perception"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "What is the scientific name for the extinct hominin known as &quot;Lucy&quot;?",
-        "correct_answer": "Australopithecus Afarensis",
-        "incorrect_answers": [
-            "Australopithecus Africanus",
-            "Australopithecus Architeuthis",
-            "Australopithecus Antaris"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "When the Falcon Heavy was launched on it&#039;s test flight, what was the only part of the operation that failed?",
-        "correct_answer": "Center Core Landing",
-        "incorrect_answers": [
-            "Side Booster Landing",
-            "Deployment of Starman",
-            "Ignition and Liftoff"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "How many chromosomes are in your body cells?",
-        "correct_answer": "23",
-        "incorrect_answers": [
-            "21",
-            "22",
-            "24"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "What name is given to all baby marsupials?",
-        "correct_answer": "Joey",
-        "incorrect_answers": [
-            "Calf",
-            "Pup",
-            "Cub"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Science &amp; Nature",
-        "question": "What is the standard SI unit for time?",
-        "correct_answer": "Second",
-        "incorrect_answers": [
-            "Minute",
-            "Hour",
-            "Day"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "Which planet did the &quot;Viking 1&quot; spacecraft send surface images of, starting in 1976?",
-        "correct_answer": "Mars",
-        "incorrect_answers": [
-            "Saturn",
-            "Jupiter",
-            "Venus"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "The core of the Sun can reach which temperature?",
-        "correct_answer": "27&deg; Million F (15&deg; Million C)",
-        "incorrect_answers": [
-            "938,000&deg; F (521093.3&deg; C)",
-            "8&deg; Billion F (&deg;4.4 Billion C)",
-            "Absolute Zero (Both F and C)"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "Which of the following elements is typically used in the doping of the semiconductor silicon?",
-        "correct_answer": "Boron",
-        "incorrect_answers": [
-            "Oxygen",
-            "Carbon",
-            "Iron"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "What is considered the rarest form of color blindness?",
-        "correct_answer": "Blue",
-        "incorrect_answers": [
-            "Red",
-            "Green",
-            "Purple"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "Deuterium is an isotope of which element?",
-        "correct_answer": "Hydrogen",
-        "incorrect_answers": [
-            "Nitrogen",
-            "Helium",
-            "Neon"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What mineral has the lowest number on the Mohs scale?",
-        "correct_answer": "Talc",
-        "incorrect_answers": [
-            "Quartz",
-            "Diamond",
-            "Gypsum"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "On which mission did the Space Shuttle Columbia break up upon re-entry?",
-        "correct_answer": "STS-107",
-        "incorrect_answers": [
-            "STS-51-L",
-            "STS-61-C",
-            "STS-109"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "What causes the sound of a heartbeat?",
-        "correct_answer": "Closure of the heart valves",
-        "incorrect_answers": [
-            "Contraction of the heart chambers",
-            "Blood exiting the heart",
-            "Relaxation of the heart chambers"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "Which of these is used to show that Earth spins on an axis? ",
-        "correct_answer": "Foucault Pendulum ",
-        "incorrect_answers": [
-            "Polaris",
-            "Sundial",
-            "Tectonic Plates "
+            "Odense",
+            "Herning",
+            "Skagen"
         ]
     },
     {
@@ -483,48 +135,264 @@
         "type": "multiple",
         "difficulty": "easy",
         "category": "Science &amp; Nature",
-        "question": "Which of the following blood vessels carries deoxygenated blood?",
-        "correct_answer": "Pulmonary Artery",
+        "question": "About what percentage of the Earth&#039;s surface is water? ",
+        "correct_answer": "70%",
         "incorrect_answers": [
-            "Pulmonary Vein",
-            "Aorta",
-            "Coronary Artery"
+            "30%",
+            "50%",
+            "90%"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Science &amp; Nature",
-        "question": "What was the category of the 2005 hurricane, Hurricane Katrina, in the Saffir-Simpson hurricane wind scale?",
-        "correct_answer": "Category 5",
+        "question": "Approximately what percentage of Earth&#039;s atmosphere is Oxygen?",
+        "correct_answer": "21%",
         "incorrect_answers": [
-            "Category 1",
-            "Category 4",
-            "Category 2"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Science &amp; Nature",
-        "question": "What is the molecular formula of Glucose?",
-        "correct_answer": "C6H12O6",
-        "incorrect_answers": [
-            "C2H4O2",
-            "K+",
-            "CH4"
+            "54%",
+            "78%",
+            "7%"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "Science &amp; Nature",
-        "question": "This element, when overcome with extreme heat and pressure, creates diamonds.",
-        "correct_answer": "Carbon",
+        "question": "What is the primary addictive substance found in tobacco?",
+        "correct_answer": "Nicotine",
         "incorrect_answers": [
-            "Nitrogen",
-            "Oxygen",
-            "Hydrogen"
+            "Cathinone",
+            "Ephedrine",
+            "Glaucine"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "The &#039;Islets of Langerhans&#039; is found in which human organ?",
+        "correct_answer": "Pancreas",
+        "incorrect_answers": [
+            "Kidney",
+            "Liver",
+            "Brain"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "In Psychology, which need appears highest in the &quot;Maslow&#039;s hierarchy of needs&quot; pyramid?",
+        "correct_answer": "Esteem",
+        "incorrect_answers": [
+            "Love",
+            "Safety",
+            "Physiological"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "What is the speed of light in a vacuum?",
+        "correct_answer": "299,792,458 m/s",
+        "incorrect_answers": [
+            "50,461 m/s",
+            "308,215,043 m/s",
+            "751,665,014,151 m/s"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "On which mission did the Space Shuttle Columbia break up upon re-entry?",
+        "correct_answer": "STS-107",
+        "incorrect_answers": [
+            "STS-51-L",
+            "STS-61-C",
+            "STS-109"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "What is the largest animal currently on Earth?",
+        "correct_answer": "Blue Whale",
+        "incorrect_answers": [
+            "Orca",
+            "Colossal Squid",
+            "Giraffe"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "What is the Linnean name of the domestic apple tree?",
+        "correct_answer": "Malus pumila",
+        "incorrect_answers": [
+            "Malus americana",
+            "Pomus domestica",
+            "Appelus delectica"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "How many degrees Fahrenheit is 100 degrees Celsius? ",
+        "correct_answer": "212",
+        "incorrect_answers": [
+            "326",
+            "100",
+            "451"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "What is the hottest planet in the solar system",
+        "correct_answer": "Venus",
+        "incorrect_answers": [
+            "Jupiter",
+            "Mercury ",
+            "Mars"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "Which planet did the &quot;Viking 1&quot; spacecraft send surface images of, starting in 1976?",
+        "correct_answer": "Mars",
+        "incorrect_answers": [
+            "Saturn",
+            "Jupiter",
+            "Venus"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "What is the molecular formula of Ozone?",
+        "correct_answer": "O3",
+        "incorrect_answers": [
+            "C6H2O6",
+            "N2O",
+            "SO4"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "Which of these chemical compounds is NOT found in gastric acid?",
+        "correct_answer": "Sulfuric acid",
+        "incorrect_answers": [
+            "Hydrochloric acid",
+            "Potassium chloride",
+            "Sodium chloride"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "Where did the dog breed &quot;Chihuahua&quot; originate?",
+        "correct_answer": "Mexico",
+        "incorrect_answers": [
+            "France",
+            "Spain",
+            "Russia"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "Which scientific unit is named after an Italian nobleman?",
+        "correct_answer": "Volt",
+        "incorrect_answers": [
+            "Pascal",
+            "Ohm",
+            "Hertz"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "In Chemistry, how many isomers does Butanol (C4H9OH) have?",
+        "correct_answer": "4",
+        "incorrect_answers": [
+            "3",
+            "5",
+            "6"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "All of the following human genetic haplogroup names are shared between Y-chromosome and mitochondrial DNA haplogroups EXCEPT:",
+        "correct_answer": "Haplogroup U",
+        "incorrect_answers": [
+            "Haplogroup L",
+            "Haplogroup T",
+            "Haplogroup J"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "The core of the Sun can reach which temperature?",
+        "correct_answer": "27&deg; Million F (15&deg; Million C)",
+        "incorrect_answers": [
+            "938,000&deg; F (521093.3&deg; C)",
+            "8&deg; Billion F (&deg;4.4 Billion C)",
+            "Absolute Zero (Both F and C)"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "Which one of these is scientific term for &quot;Brain Freeze&quot;?",
+        "correct_answer": "Sphenopalatine Ganglioneuralgia",
+        "incorrect_answers": [
+            "Hyacinthoides Italica",
+            "Amaranthus Retroflexus",
+            "Amblyomma Americanum"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "Folic acid is the synthetic form of which vitamin?",
+        "correct_answer": "Vitamin B",
+        "incorrect_answers": [
+            "Vitamin A",
+            "Vitamin C",
+            "Vitamin D"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "What was the first living creature in space?",
+        "correct_answer": "Fruit Flies ",
+        "incorrect_answers": [
+            "Monkey",
+            "Dog",
+            "Mouse"
         ]
     },
     {
@@ -541,14 +409,62 @@
     },
     {
         "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "What animal takes part in Schr&ouml;dinger&#039;s most famous thought experiment?",
+        "correct_answer": "Cat",
+        "incorrect_answers": [
+            "Dog",
+            "Bat",
+            "Butterfly"
+        ]
+    },
+    {
+        "type": "multiple",
         "difficulty": "medium",
         "category": "Science &amp; Nature",
-        "question": "In human biology, a circadium rhythm relates to a period of roughly how many hours?",
-        "correct_answer": "24",
+        "question": "On the periodic table of elements, what is the symbol for Tin?",
+        "correct_answer": "Sn",
         "incorrect_answers": [
-            "8",
-            "16",
-            "32"
+            "Ti",
+            "Ni",
+            "Na"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "What is the same in Celsius and Fahrenheit?",
+        "correct_answer": "-40",
+        "incorrect_answers": [
+            "32",
+            "-39",
+            "-42"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "The human heart has how many chambers?",
+        "correct_answer": "4",
+        "incorrect_answers": [
+            "2",
+            "6",
+            "3"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "How many baby/milk teeth does a human child have in total?",
+        "correct_answer": "20",
+        "incorrect_answers": [
+            "10",
+            "15",
+            "25"
         ]
     },
     {
@@ -567,72 +483,348 @@
         "type": "multiple",
         "difficulty": "hard",
         "category": "Science &amp; Nature",
-        "question": "Which of these animals belongs in class Chondrichthyes?",
-        "correct_answer": "Great white shark",
+        "question": "How long is a light-year?",
+        "correct_answer": "9.461 Trillion Kilometres",
         "incorrect_answers": [
-            "Octopus",
-            "Killer whale",
-            "Catfish"
+            "1 AU",
+            "105.40 Earth-years",
+            "501.2 Million Miles"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Science &amp; Nature",
-        "question": "How many degrees Fahrenheit is 100 degrees Celsius? ",
-        "correct_answer": "212",
+        "question": "What part of the body produces insulin?",
+        "correct_answer": "Pancreas",
         "incorrect_answers": [
-            "326",
+            "Kidney",
+            "Liver",
+            "Stomach"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science &amp; Nature",
+        "question": "Which is the longest bone in the human body? ",
+        "correct_answer": "Femur",
+        "incorrect_answers": [
+            "Scapula",
+            "Fibula",
+            "Ulna"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "What part of the brain takes its name from the Greek for seahorse?",
+        "correct_answer": "Hippocampus",
+        "incorrect_answers": [
+            "Cerebellum",
+            "Thalamus",
+            "Amygdala"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "If you planted the seeds of Quercus robur what would grow?",
+        "correct_answer": "Trees",
+        "incorrect_answers": [
+            "Flowers",
+            "Vegtables",
+            "Grains"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "An organism described as &quot;heliotropic&quot; has a tendancy to move towards which of these things?",
+        "correct_answer": "Light",
+        "incorrect_answers": [
+            "Water",
+            "Trees",
+            "Pollen"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "What is isobutylphenylpropanoic acid more commonly known as?",
+        "correct_answer": "Ibuprofen",
+        "incorrect_answers": [
+            "Morphine",
+            "Ketamine",
+            "Aspirin"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "Which is the chemical name of H2O?",
+        "correct_answer": "Dihydrogen Monoxide",
+        "incorrect_answers": [
+            "Ammonium chloride",
+            "Anhydrous Sodium Carbonate",
+            "Manganese dioxide"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science &amp; Nature",
+        "question": "Which desert is the only desert in the world where the &quot;Saguaro&quot; cactus grows indigenously?",
+        "correct_answer": "The Sonoran Desert",
+        "incorrect_answers": [
+            "The Gobi Desert",
+            "The Yuma Desert",
+            "The Arabian Desert"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Science &amp; Nature",
+        "question": "Burning which of these metals will produce a bright white flame?",
+        "correct_answer": "Magnesium",
+        "incorrect_answers": [
+            "Copper",
+            "Lithium",
+            "Lead"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "What is Canada&#039;s smallest province?",
+        "correct_answer": "Prince Edward Island",
+        "incorrect_answers": [
+            "New Brunswick",
+            "Nova Scotia",
+            "Yukon"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "How many countries are larger than Australia?",
+        "correct_answer": "5",
+        "incorrect_answers": [
+            "4",
+            "3",
+            "6"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What event led to Liechenstein adding a crown to its flag?",
+        "correct_answer": "The 1936 Olympics",
+        "incorrect_answers": [
+            "Coronation of Prince Johann I Joseph in 1805",
+            "Charles VI&#039;s decree in 1719",
+            "Signing of the 1862 Constitution of Liechtenstein"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "What is the capital of Romania?",
+        "correct_answer": "Bucharest",
+        "incorrect_answers": [
+            "Bratislava",
+            "Belgrade",
+            "Budapest"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "Which country is the Taedong River in?",
+        "correct_answer": "North Korea",
+        "incorrect_answers": [
+            "South Korea",
+            "Japan",
+            "China"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "On a London Underground map, what colour is the Circle Line?",
+        "correct_answer": "Yellow",
+        "incorrect_answers": [
+            "Red",
+            "Blue",
+            "Green"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What is the capital of Australia?",
+        "correct_answer": "Canberra",
+        "incorrect_answers": [
+            "Sydney",
+            "Melbourne",
+            "Brisbane"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "About how many countries are there in the world?",
+        "correct_answer": "200",
+        "incorrect_answers": [
             "100",
-            "451"
+            "300",
+            "500"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
-        "category": "Science &amp; Nature",
-        "question": "What is the unit of electrical capacitance?",
-        "correct_answer": "Farad",
+        "category": "Geography",
+        "question": "What is the name of the former country that was succeeded by countries such as Serbia, Croatia and Slovenia?",
+        "correct_answer": "Yugoslavia",
         "incorrect_answers": [
-            "Gauss",
-            "Henry",
-            "Watt"
+            "Czechoslovakia",
+            "Abkhazia",
+            "South Ossetia"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "A lion brandishing a sword is depicted on the national flag of which country?",
+        "correct_answer": "Sri Lanka",
+        "incorrect_answers": [
+            "Albania",
+            "Zambia",
+            "Moldova"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": " What Texas city is nicknamed &quot;The Yellow Rose of Texas&quot;?",
+        "correct_answer": "Amarillo",
+        "incorrect_answers": [
+            "Corpus Christi",
+            "Frisco",
+            "Houston"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "Eritrea, which became the 182nd member of the UN in 1993, is in the continent of?",
+        "correct_answer": "Africa",
+        "incorrect_answers": [
+            "Europe",
+            "Asia",
+            "South America"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "What is the capital of the US State of New York?",
+        "correct_answer": "Albany",
+        "incorrect_answers": [
+            "Buffalo",
+            "New York",
+            "Rochester"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Geography",
-        "question": "What is the most populous Muslim-majority nation in 2010?",
-        "correct_answer": "Indonesia",
+        "question": "What is the largest city and commercial capital of Sri Lanka?",
+        "correct_answer": "Colombo",
         "incorrect_answers": [
-            "Saudi Arabia",
-            "Iran",
-            "Sudan"
+            "Moratuwa",
+            "Negombo",
+            "Kandy"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What is the capital city of the U.S. state of Texas?",
+        "correct_answer": "Austin",
+        "incorrect_answers": [
+            "Dallas",
+            "Houston",
+            "San Antonio"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Geography",
-        "question": "Santorini is an island belonging to what European Country?",
-        "correct_answer": "Greece",
+        "question": "With which country does France share its largest land border",
+        "correct_answer": "Brazil",
         "incorrect_answers": [
-            "Italy",
+            "Germany",
             "Spain",
-            "Turkey"
+            "Canada"
         ]
     },
     {
         "type": "multiple",
-        "difficulty": "hard",
+        "difficulty": "medium",
         "category": "Geography",
-        "question": "What is the largest freshwater lake by volume?",
-        "correct_answer": "Lake Baikal",
+        "question": "How many independent countries are there within the continent of South America?",
+        "correct_answer": "12",
         "incorrect_answers": [
-            "Lake Superior",
-            "Lake Huron",
-            "Lake Michigan"
+            "8",
+            "9",
+            "10"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "How many countries are inside the United Kingdom?",
+        "correct_answer": "Four",
+        "incorrect_answers": [
+            "Two",
+            "Three",
+            "One"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "The Principality of Sealand is an unrecognized micronation off the coast of what country?",
+        "correct_answer": "The United Kingdom",
+        "incorrect_answers": [
+            "Japan",
+            "Austrailia",
+            "Argentina"
         ]
     },
     {
@@ -649,170 +841,26 @@
     },
     {
         "type": "multiple",
-        "difficulty": "easy",
+        "difficulty": "medium",
         "category": "Geography",
-        "question": "How many countries does Mexico border?",
-        "correct_answer": "3",
+        "question": "Which islands below have been claimed by both Japan and Russia?",
+        "correct_answer": "Kuril Islands",
         "incorrect_answers": [
-            "2",
-            "4",
-            "1"
+            "Paracel Islands",
+            "Chagos Islands",
+            "Spratly Islands"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Geography",
-        "question": "Which of these countries is not a United Nations member state?",
-        "correct_answer": "Niue",
+        "question": "Which of these countries is the smallest by population?",
+        "correct_answer": "Norway",
         "incorrect_answers": [
-            "Tuvalu",
-            "South Sudan",
-            "Montenegro"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "If soccer is called football in England, what is American football called in England?",
-        "correct_answer": "American football",
-        "incorrect_answers": [
-            "Combball",
-            "Handball",
-            "Touchdown"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "In which ocean is the R&eacute;union island?",
-        "correct_answer": "Indian Ocean",
-        "incorrect_answers": [
-            "Atlantic Ocean",
-            "South Pacific Ocean",
-            "North Pacific Ocean"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "What is the tallest mountain in Canada?",
-        "correct_answer": "Mount Logan",
-        "incorrect_answers": [
-            "Mont Tremblant",
-            "Whistler Mountain",
-            "Blue Mountain"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "Which small country is located between the borders of France and Spain?",
-        "correct_answer": "Andorra",
-        "incorrect_answers": [
-            "San Marino",
-            "Vatican City",
-            "Lichtenstein"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "The US state of New York has about as many inhabitants as?",
-        "correct_answer": "Romania",
-        "incorrect_answers": [
-            "Poland",
-            "Germany",
-            "Hungary"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "What colour is the circle on the Japanese flag?",
-        "correct_answer": "Red",
-        "incorrect_answers": [
-            "White",
-            "Yellow",
-            "Black"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "What is the capital of Wisconsin, USA?",
-        "correct_answer": "Madison",
-        "incorrect_answers": [
-            "Milwaukee",
-            "Wisconsin Dells",
-            "Green Bay"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "The derisive acronym &quot;PIIGS&quot; refers to which of the following European countries and their economic statuses?",
-        "correct_answer": "Portugal, Ireland, Italy, Greece, Spain",
-        "incorrect_answers": [
-            "Poland, Iceland, Italy, Greece, Serbia",
-            "Poland, Iceland, Italy, Greenland, Spain",
-            "Portugal, Iceland, Ireland, Greece, Serbia"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Which of the following language families is the most controversial amongst modern linguists?",
-        "correct_answer": "Altaic",
-        "incorrect_answers": [
-            "Sino-Tibetan",
-            "Dravidian",
-            "Indo-European"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What is the capital of Lithuania?",
-        "correct_answer": "Vilnius",
-        "incorrect_answers": [
-            "Tallinn",
-            "Helsinki",
-            "Riga"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Which European city has the highest mileage of canals in the world?",
-        "correct_answer": "Birmingham",
-        "incorrect_answers": [
-            "Venice",
-            "Amsterdam",
-            "Berlin"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "The Maluku islands (informally known as the Spice Islands) belong to which country?",
-        "correct_answer": "Indonesia",
-        "incorrect_answers": [
-            "Chile",
-            "New Zealand",
-            "Fiji"
+            "Slovakia",
+            "Finland",
+            "Hong Kong"
         ]
     },
     {
@@ -829,6 +877,66 @@
     },
     {
         "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": " What is the only nation that borders both Uruguay and Venezuela?",
+        "correct_answer": "Brazil",
+        "incorrect_answers": [
+            "Mexico",
+            "Chile",
+            "Panama"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "What is the 15th letter of the Greek alphabet?",
+        "correct_answer": "Omicron (&Omicron;)",
+        "incorrect_answers": [
+            "Sigma (&Sigma;)",
+            "Pi (&Pi;)",
+            "Nu (&Nu;)"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "Which nation claims ownership of Antarctica?",
+        "correct_answer": "No one, but there are claims.",
+        "incorrect_answers": [
+            "United States of America",
+            "United Nations",
+            "Australia"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "Santorini is an island belonging to what European Country?",
+        "correct_answer": "Greece",
+        "incorrect_answers": [
+            "Italy",
+            "Spain",
+            "Turkey"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "What is the capital of South Korea?",
+        "correct_answer": "Seoul",
+        "incorrect_answers": [
+            "Pyongyang",
+            "Taegu",
+            "Kitakyushu"
+        ]
+    },
+    {
+        "type": "multiple",
         "difficulty": "easy",
         "category": "Geography",
         "question": "Which UK country features a dragon on their flag?",
@@ -837,6 +945,66 @@
             "England",
             "North Ireland",
             "Scotland"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What is the capital of British Columbia, Canada?",
+        "correct_answer": "Victoria",
+        "incorrect_answers": [
+            "Vancouver",
+            "Hope",
+            "Kelowna"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "In which country is Tallinn located?",
+        "correct_answer": "Estonia",
+        "incorrect_answers": [
+            "Finland",
+            "Sweden",
+            "Poland"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": "Which of these African countries displays a gun on their flag?",
+        "correct_answer": "Mozambique",
+        "incorrect_answers": [
+            "Uganda",
+            "Ethiopia",
+            "Nigeria"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "Which of these African countries list &quot;Spanish&quot; as an official language?",
+        "correct_answer": "Equatorial Guinea",
+        "incorrect_answers": [
+            "Guinea",
+            "Cameroon",
+            "Angola"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "Which city is the biggest in Canada?",
+        "correct_answer": "Toronto",
+        "incorrect_answers": [
+            "Montreal",
+            "Vancouver",
+            "Ottawa"
         ]
     },
     {
@@ -855,132 +1023,168 @@
         "type": "multiple",
         "difficulty": "hard",
         "category": "Geography",
-        "question": "What is the name of the formerly rich fishing grounds off the island of Newfoundland, Canada?",
-        "correct_answer": "Grand Banks",
+        "question": "The Suez Canal is located in which African country?",
+        "correct_answer": "Egypt",
         "incorrect_answers": [
-            "Great Barrier Reef",
-            "Mariana Trench",
-            "Hudson Bay"
+            "Libya",
+            "Ghana",
+            "Nigeria"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Geography",
-        "question": "Which is the world&#039;s longest river?",
-        "correct_answer": "Nile",
+        "question": "The World Health Organization headquarters is located in which European country?",
+        "correct_answer": "Switzerland",
         "incorrect_answers": [
-            "Missouri",
-            "Amazon",
-            "Yangtze"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "The Space Needle is located in which city?",
-        "correct_answer": "Seattle",
-        "incorrect_answers": [
-            "Los Angles",
-            "Toronto",
-            "Vancouver"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "What is the most common climbing route for the second highest mountain in the world, K2?",
-        "correct_answer": "Abruzzi Spur",
-        "incorrect_answers": [
-            "Magic Line",
-            "Cesen Route",
-            "Polish Line"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "Which of the following Arab countries does NOT have a flag containing only Pan-Arab colours?",
-        "correct_answer": "Qatar",
-        "incorrect_answers": [
-            "Kuwait",
-            "United Arab Emirates",
-            "Jordan"
+            "United Kingdom",
+            "France",
+            "Belgium"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "medium",
         "category": "Geography",
-        "question": "What is the busiest port in Europe?",
-        "correct_answer": "Port of Rotterdam",
+        "question": "What is the largest Muslim country in the world?",
+        "correct_answer": "Indonesia",
         "incorrect_answers": [
-            "Port of Antwerp",
-            "Port of Hamburg",
-            "Port of Amsterdam"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What was the African nation of Zimbabwe formerly known as?",
-        "correct_answer": "Rhodesia",
-        "incorrect_answers": [
-            "Zambia",
-            "Mozambique",
-            " Bulawayo"
+            "Pakistan",
+            "Saudi Arabia",
+            "Iran"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "easy",
         "category": "Geography",
-        "question": "Greenland is a part of which kingdom?",
-        "correct_answer": "Denmark",
+        "question": "How many countries does Mexico border?",
+        "correct_answer": "3",
         "incorrect_answers": [
-            "Sweden",
-            "Norway",
-            "United Kingdom"
+            "2",
+            "4",
+            "1"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Geography",
-        "question": "What is the administrative centre and largest settlement on the Norwegian archipelago of Svalbard?",
-        "correct_answer": "Longyearbyen",
+        "question": "In what part of Wales will you find the village Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch?",
+        "correct_answer": "Anglesey",
         "incorrect_answers": [
-            "Sveagruva",
-            "Ny-&Aring;lesund",
-            "Barentsburg"
+            "Pembrokeshire",
+            "Wrexham",
+            "Bridgend"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What is the name of the only remaining Grand Duchy in the world ?",
+        "correct_answer": "Luxembourg",
+        "incorrect_answers": [
+            "Montenegro",
+            "Liechtenstein",
+            "Andorra"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "Which of these Mediterranian islands is under the sovereign rule of France?",
+        "correct_answer": "Corsica",
+        "incorrect_answers": [
+            "Majorca",
+            "Sardinia",
+            "Malta"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What African country has Portuguese as its official language?",
+        "correct_answer": "Mozambique",
+        "incorrect_answers": [
+            "Botswana",
+            "Gabon",
+            "Togo"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What is the capital of Vietnam?",
+        "correct_answer": "Hanoi",
+        "incorrect_answers": [
+            "Da Nang",
+            "Hai Phong",
+            "Ho Chi Minh City"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Geography",
-        "question": "What is the largest city and commercial capital of Sri Lanka?",
-        "correct_answer": "Colombo",
+        "question": "What is the capital of Wisconsin, USA?",
+        "correct_answer": "Madison",
         "incorrect_answers": [
-            "Moratuwa",
-            "Negombo",
-            "Kandy"
+            "Milwaukee",
+            "Wisconsin Dells",
+            "Green Bay"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "Lake Titicaca is located between which two nations?",
+        "correct_answer": "Peru and Bolivia",
+        "incorrect_answers": [
+            "Kenya and Uganda",
+            "Mexico and the United States",
+            "India and Bangladesh"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": "What is the capital city of Slovenia?",
+        "correct_answer": "Ljubljana",
+        "incorrect_answers": [
+            "Maribor",
+            "Velenje",
+            "Trbovlje"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Geography",
+        "question": "Which area of Eastern Europe is famous for its association with vampires?",
+        "correct_answer": "Transylvania",
+        "incorrect_answers": [
+            "Silesia",
+            "Macedonia",
+            "Slovakia"
         ]
     },
     {
         "type": "multiple",
         "difficulty": "hard",
         "category": "Geography",
-        "question": "Which of these island countries is located in the Caribbean?",
-        "correct_answer": "Barbados",
+        "question": "Which of these is NOT a real tectonic plate?",
+        "correct_answer": "Atlantic Plate",
         "incorrect_answers": [
-            "Fiji",
-            "Maldives",
-            "Seychelles"
+            "North American Plate",
+            "Eurasian Plate",
+            "Nazca Plate"
         ]
     },
     {
@@ -993,810 +1197,6 @@
             "Tarawa",
             "Vaduz",
             "Tegucigalpa"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "Which US state is nicknamed &quot;The Golden State&quot;?",
-        "correct_answer": "California",
-        "incorrect_answers": [
-            "Florida",
-            "New Mexico",
-            "Alaska"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "Which of these is NOT a city in India?",
-        "correct_answer": "Islamabad",
-        "incorrect_answers": [
-            "Hyderabad",
-            "Ahmedabad",
-            "Ghaziabad"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Which is the only US state located entirely within the Appalachia region?",
-        "correct_answer": "West Virginia",
-        "incorrect_answers": [
-            "Pennsylvania",
-            "Alabama",
-            "Kentucky"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "What is the capital of the American state of Arizona?",
-        "correct_answer": "Phoenix",
-        "incorrect_answers": [
-            "Montgomery",
-            "Tallahassee",
-            "Raleigh"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "Which US state is furthest north east?",
-        "correct_answer": "Maine",
-        "incorrect_answers": [
-            "New York",
-            "Georgia",
-            "Florida"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What is the capital of the US state Nevada?",
-        "correct_answer": "Carson City",
-        "incorrect_answers": [
-            "Las Vegas",
-            "Henderson",
-            "Reno"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "Harvard University is located in which city?",
-        "correct_answer": "Cambridge",
-        "incorrect_answers": [
-            "Providence",
-            "New York",
-            "Washington D.C."
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Which of the following countries banned the use of personal genetic ancestry tests?",
-        "correct_answer": "Germany",
-        "incorrect_answers": [
-            "Austria",
-            "Canada",
-            "Sweden"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": " What is the only nation that borders both Uruguay and Venezuela?",
-        "correct_answer": "Brazil",
-        "incorrect_answers": [
-            "Mexico",
-            "Chile",
-            "Panama"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What mountain range lines the border between Spain and France?",
-        "correct_answer": "Pyrenees",
-        "incorrect_answers": [
-            "Alps",
-            "Carpathians",
-            "Urals"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "Which of these is an official currency of the Cook Islands?",
-        "correct_answer": "New Zealand Dollar",
-        "incorrect_answers": [
-            "United States Dollar",
-            "British Pound",
-            "Australian Dollar"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "What is Russia&#039;s second-largest city?",
-        "correct_answer": "Saint Petersburg",
-        "incorrect_answers": [
-            "Minsk",
-            "Nizhny Novgorod",
-            "Vladivostok"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What was the most populous city in the Americas in 2015?",
-        "correct_answer": "S&atilde;o Paulo",
-        "incorrect_answers": [
-            "New York",
-            "Mexico City",
-            "Los Angeles"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "Which two modern-day countries used to be known as the region of Rhodesia between the 1890s and 1980?",
-        "correct_answer": "Zambia &amp; Zimbabwe",
-        "incorrect_answers": [
-            "Togo &amp; Benin",
-            "Lesotho &amp; Swaziland",
-            "Rwanda &amp; Burundi"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Geography",
-        "question": "Which Borough is the farthest in the north of New York City?",
-        "correct_answer": "Bronx",
-        "incorrect_answers": [
-            "Queens",
-            "Brooklyn",
-            "Manhattan"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Geography",
-        "question": "What is the name of rocky region that spans most of eastern Canada?",
-        "correct_answer": "Canadian Shield",
-        "incorrect_answers": [
-            "Rocky Mountains",
-            "Appalachian Mountains",
-            "Himalayas"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Geography",
-        "question": "What is the capital of Chile?",
-        "correct_answer": "Santiago",
-        "incorrect_answers": [
-            "Valpara&iacute;so",
-            "Copiap&oacute;",
-            "Antofagasta"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Before 2011, &quot;True Capitalist Radio&quot; was known by a different name. What was that name?",
-        "correct_answer": "True Conservative Radio",
-        "incorrect_answers": [
-            "True Republican Radio",
-            "Texan Capitalist Radio",
-            "United Capitalists"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Who was the 40th President of the USA?",
-        "correct_answer": "Ronald Reagan",
-        "incorrect_answers": [
-            "Jimmy Carter",
-            "Bill Clinton",
-            "Richard Nixon"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "The Watergate Scandal occured in what year?",
-        "correct_answer": "1972",
-        "incorrect_answers": [
-            "1973",
-            "1974",
-            "1971"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Politics",
-        "question": "What candidate won the 2012 US Presidential Election?",
-        "correct_answer": "Barack Obama",
-        "incorrect_answers": [
-            "Mitt Romney",
-            "Bob Hope",
-            "Ross Perot"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Who succeeded Joseph Stalin as General Secretary of the Communist Party of the Soviet Union?",
-        "correct_answer": "Nikita Khrushchev",
-        "incorrect_answers": [
-            "Leonid Brezhnev",
-            "Mikhail Gorbachev",
-            "Boris Yeltsin"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Who became Prime Minister of the United Kingdom in July 2016?",
-        "correct_answer": "Theresa May",
-        "incorrect_answers": [
-            "Boris Johnson",
-            "David Cameron",
-            "Tony Blair"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Which U.S. president is said to have had the longest beard?",
-        "correct_answer": "Rutherford B. Hayes",
-        "incorrect_answers": [
-            "Zachary Taylor",
-            "John Quincy Adams",
-            "James A. Garfield"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "Who was the longest-serving senator in US history, serving from 1959 to 2010?",
-        "correct_answer": "Robert Byrd",
-        "incorrect_answers": [
-            "Daniel Inouye",
-            "Strom Thurmond",
-            "Joe Biden"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Which of the following Argentinian presidents was elected in 2015?",
-        "correct_answer": "Mauricio Macri",
-        "incorrect_answers": [
-            "Cristina Fernandez de Kirchner",
-            "Nestor Kirchner",
-            "Juan Domingo Peron"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "Which US state was the first to allow women to vote in 1869?",
-        "correct_answer": "Wyoming",
-        "incorrect_answers": [
-            "California",
-            "Delaware",
-            "Virginia"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Politics",
-        "question": "Who was the 45th President of the United States?",
-        "correct_answer": "Donald Trump",
-        "incorrect_answers": [
-            "Barack Obama",
-            "Bill Clinton",
-            "George Bush"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Which president erased the national debt of the United States?",
-        "correct_answer": "Andrew Jackson",
-        "incorrect_answers": [
-            "Ronald Reagan",
-            "John F. Kennedy",
-            "Franklin Roosevelt"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "&quot;Yes, America Can!&quot; was this United States politician&#039;s de facto campaign slogan in 2004.",
-        "correct_answer": "George W. Bush",
-        "incorrect_answers": [
-            "John Kerry",
-            "Barack Obama",
-            "Al Gore"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Which city is the seat of government of the Netherlands?",
-        "correct_answer": "The Hague",
-        "incorrect_answers": [
-            "Amsterdam",
-            "Utrecht",
-            "Rotterdam"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "In United States history, how many vice presidents did Franklin D. Roosevelt have during his time in office as president?",
-        "correct_answer": "3",
-        "incorrect_answers": [
-            "1",
-            "2",
-            "0"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Who was the British Prime Minister at the outbreak of the Second World War?",
-        "correct_answer": "Neville Chamberlain",
-        "incorrect_answers": [
-            "Clement Attlee",
-            "Winston Churchill",
-            "Stanley Baldwin"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Who is one of the co-princes of Andorra?",
-        "correct_answer": "The president of France",
-        "incorrect_answers": [
-            "The monarch of the UK",
-            "The Pope",
-            "No-one (the position is vacant)"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "What year did Gerald Ford Become President?",
-        "correct_answer": "1974",
-        "incorrect_answers": [
-            "1977",
-            "1973",
-            "1969"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "What year did the effort to deploy the Common Core State Standards (CCSS) in the US begin?",
-        "correct_answer": "2009",
-        "incorrect_answers": [
-            "2012",
-            "2006",
-            "1997"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "Which major bank&#039;s collapse was notable as one of the causes of the Financal Crisis of 2008?",
-        "correct_answer": "Lehman Brothers",
-        "incorrect_answers": [
-            "HSBC",
-            "Barclays",
-            "Lloyds"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Which United Nations principal organ has been suspended since 1994?",
-        "correct_answer": "Trusteeship Council",
-        "incorrect_answers": [
-            "Secretariat",
-            "General Assembly",
-            "Economic and Social Council"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "What country saw a world record 315 million voters turn out for elections on May 20, 1991?",
-        "correct_answer": "India",
-        "incorrect_answers": [
-            "United States of America",
-            "Soviet Union",
-            "Poland"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Politics",
-        "question": "Which former US president was nicknamed &quot;Teddy&quot; after he refused to shoot a defenseless black bear?",
-        "correct_answer": "Theodore Roosevelt",
-        "incorrect_answers": [
-            "Woodrow Wilson",
-            "James F. Fielder",
-            "Andrew Jackson"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Which of these is NOT one of Donald Trump&#039;s children?",
-        "correct_answer": "Julius",
-        "incorrect_answers": [
-            "Donald Jr.",
-            "Ivanka",
-            "Eric"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "In June 2017, Saudi Arabia and Egypt broke off ties with which country over its supposed support for terrorism?",
-        "correct_answer": "Qatar",
-        "incorrect_answers": [
-            "Bahrain",
-            "United States of America",
-            "Russia"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Politics",
-        "question": "Whose 2016 presidential campaign slogan was &quot;Make America Great Again&quot;?",
-        "correct_answer": "Donald Trump",
-        "incorrect_answers": [
-            "Ted Cruz",
-            "Marco Rubio",
-            "Bernie Sanders"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Between 1973 to 1990, what country was ruled by dictator Augusto Pinochet?",
-        "correct_answer": "Chile",
-        "incorrect_answers": [
-            "Ethiopia",
-            "Indonesia",
-            "Nicaragua"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "What is the name of Niccol&ograve; Machiavelli&#039;s work that argued effective leaders needed to crush their opponents at all costs?",
-        "correct_answer": "The Prince",
-        "incorrect_answers": [
-            "The Rape of Lucrece",
-            "Will to Power",
-            "Love&#039;s Labours Lost"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "Who is the only US president to serve two non-consecutive terms in office?",
-        "correct_answer": "Grover Cleveland",
-        "incorrect_answers": [
-            "James K. Polk",
-            "Franklin D. Roosevelt",
-            "Thomas Jefferson"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Who was the only president to not be in office in Washington D.C?",
-        "correct_answer": "George Washington",
-        "incorrect_answers": [
-            "Abraham Lincoln",
-            "Richard Nixon",
-            "Thomas Jefferson"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Politics",
-        "question": "According to the United States Constitution, how old must a person be to be elected President of the United States?",
-        "correct_answer": "35",
-        "incorrect_answers": [
-            "30",
-            "40",
-            "45"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "Which Native American tribe/nation requires at least one half blood quantum (equivalent to one parent) to be eligible for membership?",
-        "correct_answer": "Yomba Shoshone Tribe",
-        "incorrect_answers": [
-            "Standing Rock Sioux Tribe",
-            "Kiowa Tribe of Oklahoma",
-            "Pawnee Nation of Oklahoma"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "Which of the following United States Presidents served the shortest term in office?",
-        "correct_answer": "William Henry Harrison",
-        "incorrect_answers": [
-            "Zachary Taylor",
-            "James A. Garfield",
-            "Warren G. Harding"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "What is centralism?",
-        "correct_answer": " Concentration of power and authority in a central organization.",
-        "incorrect_answers": [
-            "Conforming to one single common political agenda.",
-            "Remaining politically neutral.",
-            "The grey area in the spectrum of political left and right."
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Which former US president used &quot;Let&#039;s Make America Great Again&quot; as his campaign slogan before Donald Trump&#039;s campaign?",
-        "correct_answer": "Ronald Reagan",
-        "incorrect_answers": [
-            "Jimmy Carter",
-            "Gerald Ford",
-            "Richard Nixon"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "Which of these was an official candidate in the 2017 British General Election?",
-        "correct_answer": "Lord Buckethead",
-        "incorrect_answers": [
-            "James Francis",
-            "Robert Wimbledon",
-            "Sir Crumpetsby"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Politics",
-        "question": "The largest consumer market in 2015 was...",
-        "correct_answer": "The United States of America",
-        "incorrect_answers": [
-            "Germany",
-            "Japan",
-            "United Kingdom"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "Which letter do you need to have on a European driver license in order to ride any motorbikes?",
-        "correct_answer": "A",
-        "incorrect_answers": [
-            "X",
-            "D",
-            "B"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Politics",
-        "question": "How many people are in the U.S. House of Representatives?",
-        "correct_answer": "435",
-        "incorrect_answers": [
-            "260",
-            "415",
-            "50"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Who was elected leader of the UK Labour Party in September 2015?",
-        "correct_answer": "Jeremy Corbyn",
-        "incorrect_answers": [
-            "Ed Miliband",
-            "David Cameron",
-            "Theresa May"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Before 2016, in which other year did Donald Trump run for President?",
-        "correct_answer": "2000",
-        "incorrect_answers": [
-            "2012",
-            "1988",
-            "2008"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "What is the primary purpose of the Fourth Amendment to the US Constitution?",
-        "correct_answer": "Preventing unreasonable searches and seizures",
-        "incorrect_answers": [
-            "Preventing cruel and unusual punishments",
-            "Protecting against imprisonment without due process of law",
-            "Protecting the right to keep and bear arms"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "What are the first names of the first father and son pair that were both Prime Ministers of Canada?",
-        "correct_answer": "Justin and Pierre",
-        "incorrect_answers": [
-            "John and Louis",
-            "Brian and Justin",
-            "Brian and Pierre"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "The 2014 movie &quot;The Raid 2: Berandal&quot; was mainly filmed in which Asian country?",
-        "correct_answer": "Indonesia",
-        "incorrect_answers": [
-            "Thailand",
-            "Brunei",
-            "Malaysia"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "What is former United States President Bill Clinton&#039;s full name?",
-        "correct_answer": "William Jefferson Clinton",
-        "incorrect_answers": [
-            "William Roosevelt Clinton",
-            "William Truman Clinton",
-            "William Lincoln Clinton"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "medium",
-        "category": "Politics",
-        "question": "Due to the Nagoya Resolution, China agreed to allow Taiwan to compete separately in international sporting events under what name?",
-        "correct_answer": "Chinese Taipei",
-        "incorrect_answers": [
-            "Chinese Taiwan",
-            "Republic of Taiwan",
-            "Republic of Taipei "
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "Which of the following United States senators is known for performing a 24-hour long filibuster?",
-        "correct_answer": "Strom Thurmond",
-        "incorrect_answers": [
-            "Roy Blunt",
-            "John Barrasso",
-            "Chuck Schumer"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Politics",
-        "question": "Who was South Africa&#039;s first Black President?",
-        "correct_answer": "Nelson Mandela",
-        "incorrect_answers": [
-            "Mangosuthu Buthelezi",
-            "Steve Biko ",
-            "Bishop Tutu"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "hard",
-        "category": "Politics",
-        "question": "Starting from 2000, China banned manufacturing and sales of all video game consoles. On which year was this ban lifted?",
-        "correct_answer": "2015",
-        "incorrect_answers": [
-            "2012",
-            "2008",
-            "2017"
-        ]
-    },
-    {
-        "type": "multiple",
-        "difficulty": "easy",
-        "category": "Politics",
-        "question": "Which of the following Pacific Islander countries is ruled by a constitutional monarchy?",
-        "correct_answer": "Tonga",
-        "incorrect_answers": [
-            "Palau",
-            "Fiji",
-            "Kiribati"
         ]
     }
 ]
