@@ -25,9 +25,10 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Instalar Biblioteca DuckDuckGo Search
+    - name: Instalar Biblioteca Atualizada DDGS
       run: |
-        pip install requests duckduckgo-search
+        # Instala o pacote atualizado sugerido pelo aviso do sistema
+        pip install requests ddgs
 
     - name: Executar Busca na Web Sob Demanda
       run: |
