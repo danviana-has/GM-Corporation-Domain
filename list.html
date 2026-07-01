@@ -34,7 +34,6 @@
             padding: 20px;
         }
 
-        /* --- Container Principal --- */
         .dashboard {
             width: 100%;
             max-width: 800px;
@@ -45,7 +44,6 @@
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
         }
 
-        /* --- Cabeçalho --- */
         header {
             display: flex;
             justify-content: space-between;
@@ -58,10 +56,8 @@
         h1 {
             font-size: 1.5rem;
             font-weight: 600;
-            letter-spacing: -0.5px;
         }
 
-        /* --- Indicador de Sincronização --- */
         .status-container {
             display: flex;
             align-items: center;
@@ -102,10 +98,8 @@
             color: #48c774;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        /* --- Lista de Projetos --- */
         .list {
             display: flex;
             flex-direction: column;
@@ -199,80 +193,73 @@
     <main class="dashboard">
         <header>
             <h1>Todos os nossos domínios Web</h1>
-            <div class="status-container" title="Sincronizando com o repositório a cada 1 minuto">
+            <div class="status-container" title="Backend Actions varrendo diretórios periodicamente">
                 <div class="pulse-dot"></div>
-                <div class="status-text">GitHub Sync Ativo</div>
+                <div class="status-text">Actions Core Ativo</div>
             </div>
         </header>
 
         <div class="list" id="projectList">
-            <div class="loading-status">Sincronizando com a pasta 'list' do repositório...</div>
+            <div class="loading-status">Carregando domínios sincronizados...</div>
         </div>
     </main>
 
     <script>
-        // CONFIGURAÇÃO AJUSTADA
-        const username = "danviana-has";
-        const repoName = "GM-Corporation-Domain"; 
-
         const container = document.getElementById('projectList');
 
-        async function fetchGitHubProjects() {
-            const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/list`;
-
+        async function carregarProjetosEstaticos() {
             try {
-                const response = await fetch(apiUrl);
+                // Lê o arquivo gerado pelo Actions diretamente do seu repositório publicado
+                // Ignora o cache do navegador para trazer sempre o JSON mais novo do deploy
+                const response = await fetch(`list/projetos.json?t=${new Date().getTime()}`);
                 
-                if (response.status === 404) {
-                    container.innerHTML = '<div class="loading-status">A pasta "list" ainda não foi criada ou está vazia no seu repositório.</div>';
+                if (!response.ok) {
+                    container.innerHTML = '<div class="loading-status">O índice de domínios está sendo gerado pela primeira vez pelo Actions Backend...</div>';
                     return;
                 }
 
-                const contents = await response.json();
+                const projects = await response.json();
 
-                // Filtra apenas o que for diretório (pasta) dentro de /list
-                const folders = contents.filter(item => item.type === 'dir');
-
-                if (folders.length === 0) {
-                    container.innerHTML = '<div class="loading-status">Nenhuma pasta de projeto encontrada em /list.</div>';
+                if (projects.length === 0) {
+                    container.innerHTML = '<div class="loading-status">Nenhum projeto com index.html ativo na pasta /list.</div>';
                     return;
                 }
 
-                container.innerHTML = ''; // Limpa o status antigo
+                container.innerHTML = ''; // Limpa o carregando
 
-                folders.forEach(folder => {
+                projects.forEach(projeto => {
                     const item = document.createElement('div');
                     item.className = 'project-item';
                     
-                    // Constrói o link apontando diretamente para o index.html da subpasta no GitHub Pages
-                    const projectUrl = `https://${username}.github.io/${repoName}/list/${folder.name}/index.html`;
+                    // Rota direta e limpa para o subdomínio da pasta
+                    const projectUrl = `list/${projeto.nome}/index.html`;
 
                     item.innerHTML = `
                         <div class="project-info">
                             <span class="folder-icon"></span>
                             <div>
-                                <span class="project-name">${folder.name}</span>
-                                <span class="project-meta">/index.html auto-detectado</span>
+                                <span class="project-name">${projeto.nome}</span>
+                                <span class="project-meta">/index.html operativo</span>
                             </div>
                         </div>
                         <a href="${projectUrl}" class="btn-open" target="_blank">
-                            Abrir Projeto ↗
+                            Acessar Domínio ↗
                         </a>
                     `;
                     container.appendChild(item);
                 });
 
             } catch (error) {
-                console.error("Erro ao buscar dados da API do GitHub:", error);
-                container.innerHTML = '<div class="loading-status" style="color: #ff6b6b;">Erro ao conectar com a API do GitHub.</div>';
+                console.error("Erro ao ler banco de dados estático:", error);
+                container.innerHTML = '<div class="loading-status" style="color: #ff6b6b;">Erro ao carregar mapa de domínios.</div>';
             }
         }
 
-        // Carrega imediatamente ao abrir a tela
-        fetchGitHubProjects();
+        // Executa imediatamente
+        carregarProjetosEstaticos();
 
-        // Faz a verificação a cada 1 minuto (60000 ms)
-        setInterval(fetchGitHubProjects, 60000);
+        // Verifica a cada 5 minutos
+        setInterval(carregarProjetosEstaticos, 300000);
     </script>
 </body>
 
