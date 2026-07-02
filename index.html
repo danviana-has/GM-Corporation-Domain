@@ -3,186 +3,377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GM Corporation | Liderando o Futuro da Tecnologia</title>
+    <title>GM Corporation | Innovative. Connected. Efficient.</title>
     <style>
-        /* Reset e Definições Básicas */
+        /* Reset e Base Minimalista */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Rolagem suave quando clicar em About Us */
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #0a0f1d;
-            color: #f3f4f6;
-            line-height: 1.6;
-            overflow-x: hidden;
+            background-color: #ffffff;
+            color: #111827;
+            line-height: 1.5;
         }
 
-        /* Cabeçalho / Navbar */
+        /* Navbar Limpa (Clean Layout) */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background-color: rgba(10, 15, 29, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #1e293b;
-            position: fixed;
-            width: 100%;
+            padding: 20px 5%;
+            border-bottom: 1px solid #e5e7eb;
+            background-color: #ffffff;
+            position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: #3b82f6;
-        }
-
-        .logo span {
-            color: #fff;
-        }
-
-        /* Seção Hero (Principal) */
-        .hero {
-            min-height: 100vh;
+        .brand {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            gap: 10px;
+        }
+
+        .logo-box {
+            border: 2px solid #111827;
+            padding: 4px 8px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .brand-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #111827;
+            font-weight: 500;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: #4b5563;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
             text-align: center;
-            padding: 0 20px;
-            padding-top: 80px;
-            background: radial-gradient(circle at center, #1e2640 0%, #0a0f1d 70%);
+            padding: 60px 20px 40px 20px;
+            background-color: #ffffff;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-            background: linear-gradient(45deg, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: #94a3b8;
-            max-width: 600px;
-            margin-bottom: 40px;
+            font-size: 1.1rem;
+            color: #4b5563;
+            margin-bottom: 35px;
         }
 
-        /* Botão Solicitado */
-        .btn-products {
-            display: inline-block;
-            padding: 15px 35px;
+        /* Botão do Esboço: "Acesse nossos produtos webs ↗" */
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
             font-size: 1rem;
             font-weight: 600;
-            color: #fff;
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            border: none;
-            border-radius: 30px;
+            color: #111827;
+            background-color: #ffffff;
+            border: 2px solid #111827;
             text-decoration: none;
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
-        .btn-products:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(37, 99, 235, 0.6);
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        .btn-cta:hover {
+            background-color: #111827;
+            color: #ffffff;
         }
 
-        /* Seção sobre o Fundador */
-        .founder-section {
-            padding: 100px 8%;
-            background-color: #0f172a;
-            border-top: 1px solid #1e293b;
+        /* Grid de Destaques (Três imagens do rascunho) */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 40px 5%;
+        }
+
+        .feature-card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* Placeholder elegante simulando as artes em nanquim */
+        .feature-image-placeholder {
+            height: 220px;
+            background: linear-gradient(135deg, #f3f4f6 25%, #e5e7eb 100%);
             display: flex;
+            align-items: center;
             justify-content: center;
+            color: #9ca3af;
+            font-size: 3rem;
+            border-bottom: 1px solid #e5e7eb;
         }
 
-        .founder-card {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 16px;
-            padding: 40px;
-            max-width: 800px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        .feature-info {
+            padding: 20px;
         }
 
-        .founder-title {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #3b82f6;
-            margin-bottom: 10px;
-            font-weight: 700;
+        .feature-info h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
         }
 
-        .founder-name {
-            font-size: 2.2rem;
-            color: #fff;
-            margin-bottom: 15px;
+        /* Layout de Conteúdo Inferior (4 Colunas do Esboço) */
+        .content-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            padding: 60px 5%;
+            border-top: 1px solid #e5e7eb;
         }
 
-        .founder-bio {
-            color: #94a3b8;
+        .section-column h4 {
             font-size: 1.1rem;
-            max-width: 650px;
-            margin: 0 auto;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #111827;
         }
 
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #0a0f1d;
-            border-top: 1px solid #1e293b;
-            color: #64748b;
+        /* Caixa de esboço estrutural com "X" */
+        .wireframe-box {
+            border: 1px solid #d1d5db;
+            height: 120px;
+            margin-bottom: 15px;
+            position: relative;
+            background-color: #f9fafb;
+        }
+
+        .wireframe-box::before, .wireframe-box::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #e5e7eb;
+            top: 50%;
+            left: 0;
+        }
+        .wireframe-box::before { transform: rotate(25deg); }
+        .wireframe-box::after { transform: rotate(-25deg); }
+
+        .section-column p {
             font-size: 0.9rem;
+            color: #4b5563;
+            margin-bottom: 10px;
+        }
+
+        /* Linhas de lista simuladas do rascunho */
+        .list-item-simulated {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+        .icon-sim {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #9ca3af;
+            display: inline-block;
+            text-align: center;
+            font-size: 0.7rem;
+            line-height: 18px;
+        }
+
+        /* Seção Foco na Equipe (Meet The Team) */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .team-member {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            text-align: center;
+            background-color: #f9fafb;
+        }
+
+        .team-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #e5e7eb;
+            margin: 0 auto 12px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #4b5563;
+            font-size: 1rem;
+        }
+
+        .team-member h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 4px;
+        }
+
+        .team-member span {
+            font-size: 0.8rem;
+            color: #6b7280;
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1rem; }
-            .founder-name { font-size: 1.8rem; }
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            nav ul { gap: 15px; }
+            .hero h1 { font-size: 1.8rem; }
+            .content-sections { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header / Navbar Minimalista -->
     <header>
-        <div class="logo">GM <span>CORPORATION</span></div>
+        <div class="brand">
+            <div class="logo-box">GM</div>
+            <div class="brand-name">GM Corporation</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <!-- Rola suavemente até a coluna do Fundador -->
+                <li><a href="#about-section">About Us</a></li>
+                <!-- Aponta diretamente para list.html -->
+                <li><a href="list.html">Services</a></li>
+                <!-- Executa a função do alerta com seu e-mail -->
+                <li><a onclick="showContact()">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <span>🔍 Search</span>
+            <span style="font-size: 1.2rem;">👤</span>
+        </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <h1>Ecossistemas Digitais de Alta Performance</h1>
-        <p>Desenvolvendo soluções web robustas, arquiteturas de software inteligentes e ambientes de próxima geração.</p>
+        <h1>GM Corporation. Innovative. Connected. Efficient.</h1>
+        <p>Empowering your business with advanced technology and professional solutions.</p>
         
-        <a href="list.html" class="btn-products">Todos nossos produtos Web</a>
+        <a href="list.html" class="btn-cta">Acesse nossos produtos webs ↗</a>
     </section>
 
-    <section class="founder-section">
-        <div class="founder-card">
-            <div class="founder-title">Fundador & Líder de Engenharia</div>
-            <h2 class="founder-name">Guilherme Montenegro</h2>
-            <p class="founder-bio">
-                Visionário focado em automação, sistemas de baixo nível e desenvolvimento de software independente. Conduzindo a GM Corporation na vanguarda da tecnologia com soluções open-source e arquiteturas inovadoras.
-            </p>
+    <!-- Grid Central com foco em Inovação, Desenvolvimento e Colaboração -->
+    <section class="features-grid">
+        <div class="feature-card">
+            <div class="feature-image-placeholder">💻</div>
+            <div class="feature-info">
+                <h3>Innovation Team</h3>
+            </div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-image-placeholder">⚙️</div>
+            <div class="feature-info">
+                <h3>Development</h3>
+            </div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-image-placeholder">👥</div>
+            <div class="feature-info">
+                <h3>Collaboration</h3>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 GM Corporation. Todos os direitos reservados.</p>
-    </footer>
+    <!-- Quatro colunas estruturais do rodapé do rascunho -->
+    <section class="content-sections">
+        
+        <!-- Coluna 1: How We Work -->
+        <div class="section-column">
+            <h4>How We Work</h4>
+            <div class="wireframe-box"></div>
+            <p>Metodologias ágeis focadas em entregas contínuas e excelência técnica.</p>
+        </div>
+
+        <!-- Coluna 2: Services We Offer -->
+        <div class="section-column">
+            <h4>Services We Offer</h4>
+            <div class="wireframe-box"></div>
+            <div class="list-item-simulated"><span class="icon-sim">📄</span> Cloud Architecture</div>
+            <div class="list-item-simulated"><span class="icon-sim">🔧</span> Web Applications</div>
+        </div>
+
+        <!-- Coluna 3: Client Success Stories -->
+        <div class="section-column">
+            <h4>Client Success Stories</h4>
+            <div class="wireframe-box"></div>
+            <p>Transformando negócios globais através de ecossistemas digitais eficientes.</p>
+        </div>
+
+        <!-- Coluna 4: Meet The Team (Com ID adicionado para o About Us rolar até aqui) -->
+        <div class="section-column" id="about-section">
+            <h4>Meet The Team</h4>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar">GM</div>
+                    <h5>Guilherme Montenegro</h5>
+                    <span>Founder & Lead Engineer</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Script leve e seguro apenas para a ação do botão Contact -->
+    <script>
+        function showContact() {
+            alert("Entre em contato no email guilhermemfbastos@gmail.com");
+        }
+    </script>
 
 </body>
 </html>
