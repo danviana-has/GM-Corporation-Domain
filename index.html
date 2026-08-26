@@ -1,379 +1,151 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GM Corporation | Innovative. Connected. Efficient.</title>
-    <style>
-        /* Reset e Base Minimalista */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    <title>GM Corporation | Tecnologia que dobra o tempo do seu dia</title>
+    
+    <!-- Favicon / Logo na pasta raiz -->
+    <link rel="icon" type="image/png" href="./icon-gm.png">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0F172A',
+                            accent: '#2563EB',
+                            light: '#F8FAFC',
+                            hover: '#1D4ED8'
+                        }
+                    }
+                }
+            }
         }
-
-        /* Rolagem suave quando clicar em About Us */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #ffffff;
-            color: #111827;
-            line-height: 1.5;
-        }
-
-        /* Navbar Limpa (Clean Layout) */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            border-bottom: 1px solid #e5e7eb;
-            background-color: #ffffff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-box {
-            border: 2px solid #111827;
-            padding: 4px 8px;
-            font-weight: 800;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-        }
-
-        .brand-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #111827;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #4b5563;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-            cursor: pointer;
-        }
-
-        nav ul li a:hover, nav ul li a.active {
-            color: #111827;
-            font-weight: 500;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            color: #4b5563;
-            font-size: 0.95rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-            background-color: #ffffff;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #4b5563;
-            margin-bottom: 35px;
-        }
-
-        /* Botão do Esboço: "Acesse nossos produtos webs ↗" */
-        .btn-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #111827;
-            background-color: #ffffff;
-            border: 2px solid #111827;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-cta:hover {
-            background-color: #111827;
-            color: #ffffff;
-        }
-
-        /* Grid de Destaques (Três imagens do rascunho) */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            padding: 40px 5%;
-        }
-
-        .feature-card {
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        /* Placeholder elegante simulando as artes em nanquim */
-        .feature-image-placeholder {
-            height: 220px;
-            background: linear-gradient(135deg, #f3f4f6 25%, #e5e7eb 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9ca3af;
-            font-size: 3rem;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .feature-info {
-            padding: 20px;
-        }
-
-        .feature-info h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #111827;
-        }
-
-        /* Layout de Conteúdo Inferior (4 Colunas do Esboço) */
-        .content-sections {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            padding: 60px 5%;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .section-column h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #111827;
-        }
-
-        /* Caixa de esboço estrutural com "X" */
-        .wireframe-box {
-            border: 1px solid #d1d5db;
-            height: 120px;
-            margin-bottom: 15px;
-            position: relative;
-            background-color: #f9fafb;
-        }
-
-        .wireframe-box::before, .wireframe-box::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            background-color: #e5e7eb;
-            top: 50%;
-            left: 0;
-        }
-        .wireframe-box::before { transform: rotate(25deg); }
-        .wireframe-box::after { transform: rotate(-25deg); }
-
-        .section-column p {
-            font-size: 0.9rem;
-            color: #4b5563;
-            margin-bottom: 10px;
-        }
-
-        /* Linhas de lista simuladas do rascunho */
-        .list-item-simulated {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #4b5563;
-        }
-        .icon-sim {
-            width: 20px;
-            height: 20px;
-            border: 1px solid #9ca3af;
-            display: inline-block;
-            text-align: center;
-            font-size: 0.7rem;
-            line-height: 18px;
-        }
-
-        /* Seção Foco na Equipe (Meet The Team) */
-        .team-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .team-member {
-            border: 1px solid #e5e7eb;
-            padding: 20px;
-            text-align: center;
-            background-color: #f9fafb;
-        }
-
-        .team-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #e5e7eb;
-            margin: 0 auto 12px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #4b5563;
-            font-size: 1rem;
-        }
-
-        .team-member h5 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #111827;
-            margin-bottom: 4px;
-        }
-
-        .team-member span {
-            font-size: 0.8rem;
-            color: #6b7280;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; text-align: center; }
-            nav ul { gap: 15px; }
-            .hero h1 { font-size: 1.8rem; }
-            .content-sections { grid-template-columns: 1fr; }
-        }
-    </style>
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+<body class="bg-brand-light text-slate-800 font-sans antialiased flex flex-col min-h-screen">
 
-    <!-- Header / Navbar Minimalista -->
-    <header>
-        <div class="brand">
-            <div class="logo-box">GM</div>
-            <div class="brand-name">GM Corporation</div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <!-- Rola suavemente até a coluna do Fundador -->
-                <li><a href="#about-section">About Us</a></li>
-                <!-- Aponta diretamente para list.html -->
-                <li><a href="list.html">Services</a></li>
-                <!-- Executa a função do alerta com seu e-mail -->
-                <li><a onclick="showContact()">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="nav-right">
-            <span>🔍 Search</span>
-            <span style="font-size: 1.2rem;">👤</span>
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <img src="./icon-gm.png" alt="GM Corporation Logo" class="w-10 h-10 object-contain">
+                <span class="font-bold text-xl tracking-tight text-slate-900">GM Corporation</span>
+            </a>
+            <nav class="hidden md:flex gap-8 font-medium text-slate-600 text-sm">
+                <a href="#produtos" class="hover:text-brand-accent transition">Produtos</a>
+                <a href="#sobre" class="hover:text-brand-accent transition">Liderança</a>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>GM Corporation. Innovative. Connected. Efficient.</h1>
-        <p>Empowering your business with advanced technology and professional solutions.</p>
-        
-        <a href="list.html" class="btn-cta">Acesse nossos produtos webs ↗</a>
-    </section>
-
-    <!-- Grid Central com foco em Inovação, Desenvolvimento e Colaboração -->
-    <section class="features-grid">
-        <div class="feature-card">
-            <div class="feature-image-placeholder">💻</div>
-            <div class="feature-info">
-                <h3>Innovation Team</h3>
-            </div>
-        </div>
-        <div class="feature-card">
-            <div class="feature-image-placeholder">⚙️</div>
-            <div class="feature-info">
-                <h3>Development</h3>
-            </div>
-        </div>
-        <div class="feature-card">
-            <div class="feature-image-placeholder">👥</div>
-            <div class="feature-info">
-                <h3>Collaboration</h3>
+    <section class="py-20 md:py-32 px-6 bg-gradient-to-b from-white to-brand-light">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="inline-block bg-blue-50 text-brand-accent font-semibold text-xs px-3 py-1 rounded-full border border-blue-100 uppercase tracking-widest mb-6">
+                Inovação & Produtividade
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                Tecnologia que dobra o tempo do seu dia.
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10">
+                A GM Corporation desenvolve ecossistemas integrados para simplificar sua rotina, otimizar processos e elevar seu aprendizado.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#produtos" class="bg-brand-accent hover:bg-brand-hover text-white font-medium px-6 py-3 rounded-lg shadow-lg shadow-blue-500/20 transition flex items-center gap-2">
+                    Conhecer Soluções <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Quatro colunas estruturais do rodapé do rascunho -->
-    <section class="content-sections">
-        
-        <!-- Coluna 1: How We Work -->
-        <div class="section-column">
-            <h4>How We Work</h4>
-            <div class="wireframe-box"></div>
-            <p>Metodologias ágeis focadas em entregas contínuas e excelência técnica.</p>
+    <!-- Produtos Principais -->
+    <section id="produtos" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900">Plataformas em Destaque</h2>
+            <p class="text-slate-600 mt-2">Acesse nossos produtos mais utilizados em um só lugar.</p>
         </div>
 
-        <!-- Coluna 2: Services We Offer -->
-        <div class="section-column">
-            <h4>Services We Offer</h4>
-            <div class="wireframe-box"></div>
-            <div class="list-item-simulated"><span class="icon-sim">📄</span> Cloud Architecture</div>
-            <div class="list-item-simulated"><span class="icon-sim">🔧</span> Web Applications</div>
-        </div>
-
-        <!-- Coluna 3: Client Success Stories -->
-        <div class="section-column">
-            <h4>Client Success Stories</h4>
-            <div class="wireframe-box"></div>
-            <p>Transformando negócios globais através de ecossistemas digitais eficientes.</p>
-        </div>
-
-        <!-- Coluna 4: Meet The Team (Com ID adicionado para o About Us rolar até aqui) -->
-        <div class="section-column" id="about-section">
-            <h4>Meet The Team</h4>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="team-avatar">GM</div>
-                    <h5>Guilherme Montenegro</h5>
-                    <span>Founder & Lead Engineer</span>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- GameEdu -->
+            <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">GameEdu</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Plataforma interativa que transforma o aprendizado em uma experiência gamificada e engajante.
+                    </p>
                 </div>
+                <a href="https://gameedu.gmcorporation.com.br" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-slate-50 hover:bg-slate-100 text-slate-700 font-medium text-sm rounded-lg border border-slate-200 transition">
+                    Acessar GameEdu <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- GM Ecosystem -->
+            <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-blue-50 text-brand-accent rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="layout-grid" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">GM Ecosystem</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Seu workspace de trabalho completo na nuvem, reunindo ferramentas essenciais de produtividade.
+                    </p>
+                </div>
+                <a href="https://ecosystem.gmcorporation.com.br" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-slate-50 hover:bg-slate-100 text-slate-700 font-medium text-sm rounded-lg border border-slate-200 transition">
+                    Acessar Ecosystem <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- GM Central Account -->
+            <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">GM Central Account</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Central unificada para provedor de contas, gestão de acesso e serviço seguro de mensagens.
+                    </p>
+                </div>
+                <a href="https://email.gmcorporation.com.br" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-slate-50 hover:bg-slate-100 text-slate-700 font-medium text-sm rounded-lg border border-slate-200 transition">
+                    Acessar Central <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
             </div>
         </div>
-
     </section>
 
-    <!-- Script leve e seguro apenas para a ação do botão Contact -->
-    <script>
-        function showContact() {
-            alert("Entre em contato no email guilhermemfbastos@gmail.com");
-        }
-    </script>
+    <!-- Seção Liderança / CEO -->
+    <section id="sobre" class="py-16 px-6 bg-white border-t border-slate-200 mt-auto">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-2">Liderança Executive</h2>
+            <h3 class="text-2xl font-bold text-slate-900">Guilherme Montenegro Figueiroa Bastos</h3>
+            <p class="text-slate-500 text-sm mt-1">Chief Executive Officer (CEO)</p>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 px-6 text-center text-xs border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <img src="./icon-gm.png" alt="GM Corporation" class="w-6 h-6 object-contain">
+                <span class="font-semibold text-slate-200">GM Corporation</span>
+            </div>
+            <p>&copy; GM Corporation. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script dos Ícones -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
