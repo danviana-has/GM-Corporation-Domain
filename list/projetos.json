@@ -1,11 +1,11 @@
 [
     {
-        "nome": "GM Search"
-    },
-    {
         "nome": "gm-ai"
     },
     {
         "nome": "gm-edu"
+    },
+    {
+        "nome": "GM Search"
     }
 ]
